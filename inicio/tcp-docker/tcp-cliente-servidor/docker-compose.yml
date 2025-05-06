@@ -1,0 +1,24 @@
+version: '3'
+services:
+  servidor:
+    build: ./servidor
+    container_name: servidor_tcp
+    networks:
+      redtcp:
+        ipv4_address: 172.20.0.2
+
+  cliente:
+    build: ./cliente
+    container_name: cliente_tcp
+    depends_on:
+      - servidor
+    networks:
+      redtcp:
+        ipv4_address: 172.20.0.3
+
+networks:
+  redtcp:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

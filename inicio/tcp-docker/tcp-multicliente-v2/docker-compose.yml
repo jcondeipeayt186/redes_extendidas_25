@@ -1,0 +1,39 @@
+version: '3'
+services:
+  servidor:
+    build: ./servidor
+    container_name: servidor_tcp_multi
+    volumes:
+      - ./servidor:/app
+    networks:
+      redtcp:
+        ipv4_address: 172.28.0.2
+
+  cliente1:
+    build: ./cliente1
+    container_name: cliente1_tcp
+    depends_on:
+      - servidor
+    volumes:
+      - ./cliente1:/app
+    networks:
+      redtcp:
+        ipv4_address: 172.28.0.3
+
+  cliente2:
+    build: ./cliente2
+    container_name: cliente2_tcp
+    depends_on:
+      - servidor
+    volumes:
+      - ./cliente2:/app
+    networks:
+      redtcp:
+        ipv4_address: 172.28.0.4
+
+networks:
+  redtcp:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24
