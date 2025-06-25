@@ -10,6 +10,7 @@ Qué hace: Convierte un dominio a su dirección IP utilizando resolución DNS.
 """
 
 dominio = "wikipedia.org"
+dominio = "www.propiedadintelectual.unrc.edu.ar"
 #dominio = "evelia.unrc.edu.ar"
 ip = socket.gethostbyname(dominio)
 print(f"La IP de {dominio} es {ip}")
