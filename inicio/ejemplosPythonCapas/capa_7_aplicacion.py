@@ -9,14 +9,14 @@ print("Respuesta HTTP GET:", response.text)
 import smtplib
 from email.mime.text import MIMEText
 
-remitente = "julianconde.ispc@gmail.com"
-destinatario = "julianconde.ipeayt186@gmail.com"
+remitente = "" # PONER CUENTA DE CORREO
+destinatario = "" # PONER CUENTA DE CORREO
 msg = MIMEText("Este es un correo enviado desde Python usando SMTP.")
 msg['Subject'] = "Prueba SMTP"
 msg['From'] = remitente
 msg['To'] = destinatario
 
-token = "irglvrmkjkfgxpfp"
+token = "" # PONER TOKEN DE CLAVE DE APLICACIONES
 
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as servidor:
     servidor.login(remitente, token)#'tu_contraseña_o_token'
