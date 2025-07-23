@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Página de la Capa 3: Red. Muestra introducción, protocolos y prueba interactiva de ping. -->
+<div class="container mt-4">
+    <h2>Capa 3: Red</h2>
+    <p>La capa de red se encarga del direccionamiento y el encaminamiento de los paquetes de datos entre redes diferentes. Permite la interconexión de múltiples redes y la determinación de rutas óptimas.</p>
+    <h4>Protocolos y Tecnologías:</h4>
+    <ul>
+        <li><strong>IP:</strong> Protocolo de Internet.</li>
+        <li><strong>ICMP:</strong> Mensajes de control y diagnóstico.</li>
+        <li><strong>ARP:</strong> Resolución de direcciones.</li>
+        <li><strong>RIP/OSPF:</strong> Protocolos de enrutamiento.</li>
+    </ul>
+    <hr>
+    {% if session.username %}
+    <!-- Formulario para realizar un ping a una IP o dominio -->
+    <h5>Prueba interactiva: Ping</h5>
+    <form method="post" action="/capa3">
+        <div class="mb-3">
+            <label for="destino" class="form-label">IP o dominio a hacer ping:</label>
+            <input type="text" class="form-control" id="destino" name="destino" placeholder="ej: 8.8.8.8 o google.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Realizar Ping</button>
+    </form>
+    {% if resultado %}
+    <!-- Muestra el resultado del ping -->
+    <div class="mt-3">
+        <h6>Resultado:</h6>
+        <pre>{{ resultado }}</pre>
+    </div>
+    {% endif %}
+    {% else %}
+    <!-- Mensaje si el usuario no está autenticado -->
+    <div class="alert alert-warning mt-3">Debes iniciar sesión para realizar pruebas interactivas.</div>
+    {% endif %}
+</div>
+{% endblock %} 

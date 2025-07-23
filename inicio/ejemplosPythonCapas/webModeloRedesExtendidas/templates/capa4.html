@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Página de la Capa 4: Transporte. Muestra introducción, protocolos y pruebas interactivas (conexión TCP y chat TCP). -->
+<div class="container mt-4">
+    <h2>Capa 4: Transporte</h2>
+    <p>La capa de transporte asegura la transferencia confiable de datos entre sistemas finales. Proporciona control de errores, control de flujo y segmentación de datos.</p>
+    <h4>Protocolos y Tecnologías:</h4>
+    <ul>
+        <li><strong>TCP:</strong> Protocolo de Control de Transmisión.</li>
+        <li><strong>UDP:</strong> Protocolo de Datagrama de Usuario.</li>
+    </ul>
+    <hr>
+    <!-- Prueba de conexión TCP -->
+    <div class="mb-4">
+        <h5>Prueba interactiva: Conexión TCP</h5>
+        <form method="post" action="/capa4">
+            <div class="mb-3">
+                <label for="host" class="form-label">Host/IP:</label>
+                <input type="text" class="form-control" id="host" name="host" placeholder="ej: google.com o 8.8.8.8" required>
+            </div>
+            <div class="mb-3">
+                <label for="puerto" class="form-label">Puerto:</label>
+                <input type="number" class="form-control" id="puerto" name="puerto" placeholder="ej: 80" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Probar Conexión</button>
+        </form>
+        {% if resultado %}
+        <!-- Muestra el resultado de la conexión TCP -->
+        <div class="mt-3">
+            <h6>Resultado:</h6>
+            <pre>{{ resultado }}</pre>
+        </div>
+        {% endif %}
+    </div>
+    <!-- Prueba de chat TCP local -->
+    <div class="mb-4">
+        <h5>Prueba interactiva: Chat TCP Local</h5>
+        <p>Simula un chat entre cliente y servidor TCP en <strong>localhost:5555</strong>. Puedes iniciar el servidor y enviar mensajes desde la web.</p>
+        <a href="/capa4/chat" class="btn btn-success">Ir al Chat TCP Local</a>
+    </div>
+</div>
+{% endblock %} 

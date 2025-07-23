@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Página de la Capa 1: Física. Muestra introducción y protocolos de la capa. -->
+<div class="container mt-4">
+    <h2>Capa 1: Física</h2>
+    <p>La capa física se encarga de la transmisión de bits a través de un medio físico. Define las características eléctricas, mecánicas y funcionales para activar, mantener y desactivar la transmisión física de datos.</p>
+    <h4>Protocolos y Tecnologías:</h4>
+    <ul>
+        <li><strong>Ethernet:</strong> Estándar para redes de área local (LAN).</li>
+        <li><strong>Wi-Fi:</strong> Comunicación inalámbrica.</li>
+        <li><strong>Bluetooth:</strong> Comunicación de corto alcance.</li>
+        <li><strong>USB:</strong> Conexión de dispositivos periféricos.</li>
+    </ul>
+    <div class="mb-4">
+        <h5>Prueba interactiva: Conversión de texto/binario/hexadecimal</h5>
+        <a href="{{ url_for('capa1_conversion') }}" class="btn btn-primary">Ir a Conversión de Texto/Binario/Hexadecimal</a>
+    </div>
+    <p class="mt-3">Próximamente: Pruebas interactivas de la capa física.</p>
+</div>
+{% endblock %} 

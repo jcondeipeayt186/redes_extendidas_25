@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Página de la Capa 7: Aplicación. Muestra introducción, protocolos y prueba de consulta DNS. -->
+<div class="container mt-4">
+    <h2>Capa 7: Aplicación</h2>
+    <p>La capa de aplicación es la más cercana al usuario final. Proporciona servicios de red a las aplicaciones del usuario, como correo electrónico, transferencia de archivos y navegación web.</p>
+    <h4>Protocolos y Tecnologías:</h4>
+    <ul>
+        <li><strong>HTTP:</strong> Protocolo de transferencia de hipertexto.</li>
+        <li><strong>FTP:</strong> Protocolo de transferencia de archivos.</li>
+        <li><strong>SMTP:</strong> Protocolo de correo electrónico.</li>
+        <li><strong>DNS:</strong> Sistema de nombres de dominio.</li>
+    </ul>
+    <hr>
+    {% if session.username %}
+    <!-- Formulario para consultar la IP de un dominio (DNS) -->
+    <h5>Prueba interactiva: Consulta DNS</h5>
+    <form method="post" action="/capa7">
+        <div class="mb-3">
+            <label for="dominio" class="form-label">Dominio a consultar:</label>
+            <input type="text" class="form-control" id="dominio" name="dominio" placeholder="ej: google.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Consultar</button>
+    </form>
+    {% if resultado %}
+    <!-- Muestra el resultado de la consulta DNS -->
+    <div class="mt-3">
+        <h6>Resultado:</h6>
+        <pre>{{ resultado }}</pre>
+    </div>
+    {% endif %}
+    <hr>
+    <div class="mb-3">
+        <h5>Prueba interactiva: Envío de Mail SMTP</h5>
+        <a href="{{ url_for('capa7_mail') }}" class="btn btn-success">Ir a Envío de Mail SMTP</a>
+    </div>
+    <div class="mb-3">
+        <h5>Prueba interactiva: Subida de archivo FTP</h5>
+        <a href="{{ url_for('capa7_ftp') }}" class="btn btn-info">Ir a Subida de archivo FTP</a>
+    </div>
+    {% else %}
+    <!-- Mensaje si el usuario no está autenticado -->
+    <div class="alert alert-warning mt-3">Debes iniciar sesión para realizar pruebas interactivas.</div>
+    {% endif %}
+</div>
+{% endblock %} 
