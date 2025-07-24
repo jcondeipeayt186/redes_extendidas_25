@@ -22,6 +22,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 from ftplib import FTP
+from scapy.all import sniff
+import uuid
 
 # =============================
 # CONFIGURACIÓN DE LA APLICACIÓN
@@ -40,68 +42,6 @@ chat_messages = {}
 tcp_server_thread = None
 tcp_server_running = False
 
-# =============================
-# FUNCIÓN DEL SERVIDOR TCP (HILO)
-# =============================
-# Esta función corre en segundo plano y simula un servidor TCP local para la prueba de chat
-def tcp_server():
-    global tcp_server_running, chat_messages
-    tcp_server_running = True
-    servidor_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    servidor_tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    servidor_tcp.bind(("localhost", 5555))
-    servidor_tcp.listen(MAX_CLIENTES)
-    while tcp_server_running:
-        try:
-            servidor_tcp.settimeout(1)
-            conn, addr = servidor_tcp.accept()
-            data = conn.recv(1024)
-            if data:
-                msg = data.decode()
-                # El primer carácter del mensaje es el número de cliente
-                cliente_id = msg[0]
-                texto = msg[2:]
-                if cliente_id not in chat_messages:
-                    chat_messages[cliente_id] = []
-                chat_messages[cliente_id].append(f"Cliente {cliente_id}: {texto}")
-                conn.sendall(f"Servidor recibió de Cliente {cliente_id}: {texto}".encode())
-            conn.close()
-        except socket.timeout:
-            continue
-        except Exception as e:
-            for cid in chat_messages:
-                chat_messages[cid].append(f"Error en el servidor: {e}")
-    servidor_tcp.close()
-
-# Función para enviar correo usando SMTP y Gmail
-# Requiere remitente, destinatario, token de app y mensaje
-
-def enviar_mail_smtp(remitente, destinatario, token, asunto, cuerpo):
-    msg = MIMEText(cuerpo)
-    msg['Subject'] = asunto
-    msg['From'] = remitente
-    msg['To'] = destinatario
-    try:
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as servidor:
-            servidor.login(remitente, token)
-            servidor.send_message(msg)
-        return True, 'Correo enviado exitosamente.'
-    except Exception as e:
-        return False, f'Error al enviar correo: {e}'
-
-# Función para subir un archivo a un servidor FTP
-# Requiere host, usuario, contraseña, ruta remota y archivo local
-
-def subir_archivo_ftp(host, usuario, password, archivo_local, archivo_remoto):
-    try:
-        ftp = FTP(host)
-        ftp.login(usuario, password)
-        with open(archivo_local, 'rb') as f:
-            ftp.storbinary(f'STOR {archivo_remoto}', f)
-        ftp.quit()
-        return True, 'Archivo subido exitosamente.'
-    except Exception as e:
-        return False, f'Error al subir archivo por FTP: {e}'
 
 # =============================
 # RUTAS PRINCIPALES DE LA APLICACIÓN
@@ -270,6 +210,59 @@ def capa7():
         )
     return render_template('capa7.html', resultado=resultado)
 
+# Capa 2 (Pruebas de enlace de datos)
+@app.route('/capa2/pruebas', methods=['GET', 'POST'])
+def capa2_pruebas():
+    resultado = None
+    if 'user_id' not in session:
+        flash('Debes iniciar sesión para realizar pruebas.', 'warning')
+        return redirect(url_for('registro'))
+    if request.method == 'POST':
+        prueba = request.form['prueba']
+        if prueba == 'mac':
+            mac = uuid.getnode()
+            mac_str = ':'.join(f'{(mac >> ele) & 0xff:02x}' for ele in range(40, -1, -8))
+            resultado = f"Dirección MAC local: {mac_str}"
+            crear_resultado_testcapa(
+                capa='Enlace de Datos',
+                testcapa='Obtener MAC local',
+                protocol='Ethernet',
+                datain='-',
+                resultado=resultado,
+                user_id=session['user_id']
+            )
+        elif prueba == 'interfaces':
+            try:
+                import subprocess
+                interfaces = subprocess.check_output(['ip', 'a']).decode(errors='ignore')
+                resultado = interfaces
+            except Exception as e:
+                resultado = f'Error al obtener interfaces: {e}'
+            crear_resultado_testcapa(
+                capa='Enlace de Datos',
+                testcapa='Mostrar interfaces de red',
+                protocol='Ethernet',
+                datain='-',
+                resultado=resultado[:5000],  # Limita el tamaño guardado
+                user_id=session['user_id']
+            )
+        elif prueba == 'scapy':
+            try:
+                paquetes = sniff(count=3, timeout=5)
+                resumen = paquetes.summary()
+                resultado = f"Captura de 3 paquetes:\n{resumen}"
+            except Exception as e:
+                resultado = f'Error al capturar paquetes: {e}'
+            crear_resultado_testcapa(
+                capa='Enlace de Datos',
+                testcapa='Captura de paquetes con Scapy',
+                protocol='Ethernet',
+                datain='-',
+                resultado=resultado[:5000],
+                user_id=session['user_id']
+            )
+    return render_template('capa2_pruebas.html', resultado=resultado)
+
 # Capa 1 (Física) - Conversión de texto a binario/hexadecimal y de binario a texto/decimal
 @app.route('/capa1/conversion', methods=['GET', 'POST'])
 def capa1_conversion():
@@ -286,6 +279,16 @@ def capa1_conversion():
                 'binario': binario,
                 'hexadecimal': hexadecimal
             }
+            # Guardar en la base de datos si el usuario está autenticado
+            if 'user_id' in session:
+                crear_resultado_testcapa(
+                    capa='Física',
+                    testcapa='Texto a Binario/Hexadecimal',
+                    protocol='Conversión',
+                    datain=texto,
+                    resultado=f"Binario: {binario}, Hexadecimal: {hexadecimal}",
+                    user_id=session['user_id']
+                )
         elif tipo == 'binario_a_texto':
             binario = entrada.replace(' ', '')
             try:
@@ -297,6 +300,16 @@ def capa1_conversion():
                     'texto': texto,
                     'decimal': decimal
                 }
+                # Guardar en la base de datos si el usuario está autenticado
+                if 'user_id' in session:
+                    crear_resultado_testcapa(
+                        capa='Física',
+                        testcapa='Binario a Texto/Decimal',
+                        protocol='Conversión',
+                        datain=entrada,
+                        resultado=f"Texto: {texto}, Decimal: {decimal}",
+                        user_id=session['user_id']
+                    )
             except Exception as e:
                 resultado = {'error': f'Error en la conversión: {e}'}
     return render_template('capa1_conversion.html', resultado=resultado, tipo=tipo, entrada=entrada)
@@ -403,6 +416,72 @@ def capa7_ftp():
             user_id=session['user_id']
         )
     return render_template('capa7_ftp.html', resultado=resultado)
+
+
+
+# =============================
+# FUNCIÓN DEL SERVIDOR TCP (HILO)
+# =============================
+# Esta función corre en segundo plano y simula un servidor TCP local para la prueba de chat
+def tcp_server():
+    global tcp_server_running, chat_messages
+    tcp_server_running = True
+    servidor_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    servidor_tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    servidor_tcp.bind(("localhost", 5555))
+    servidor_tcp.listen(MAX_CLIENTES)
+    while tcp_server_running:
+        try:
+            servidor_tcp.settimeout(1)
+            conn, addr = servidor_tcp.accept()
+            data = conn.recv(1024)
+            if data:
+                msg = data.decode()
+                # El primer carácter del mensaje es el número de cliente
+                cliente_id = msg[0]
+                texto = msg[2:]
+                if cliente_id not in chat_messages:
+                    chat_messages[cliente_id] = []
+                chat_messages[cliente_id].append(f"Cliente {cliente_id}: {texto}")
+                conn.sendall(f"Servidor recibió de Cliente {cliente_id}: {texto}".encode())
+            conn.close()
+        except socket.timeout:
+            continue
+        except Exception as e:
+            for cid in chat_messages:
+                chat_messages[cid].append(f"Error en el servidor: {e}")
+    servidor_tcp.close()
+
+# Función para enviar correo usando SMTP y Gmail
+# Requiere remitente, destinatario, token de app y mensaje
+
+def enviar_mail_smtp(remitente, destinatario, token, asunto, cuerpo):
+    msg = MIMEText(cuerpo)
+    msg['Subject'] = asunto
+    msg['From'] = remitente
+    msg['To'] = destinatario
+    try:
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as servidor:
+            servidor.login(remitente, token)
+            servidor.send_message(msg)
+        return True, 'Correo enviado exitosamente.'
+    except Exception as e:
+        return False, f'Error al enviar correo: {e}'
+
+# Función para subir un archivo a un servidor FTP
+# Requiere host, usuario, contraseña, ruta remota y archivo local
+
+def subir_archivo_ftp(host, usuario, password, archivo_local, archivo_remoto):
+    try:
+        ftp = FTP(host)
+        ftp.login(usuario, password)
+        with open(archivo_local, 'rb') as f:
+            ftp.storbinary(f'STOR {archivo_remoto}', f)
+        ftp.quit()
+        return True, 'Archivo subido exitosamente.'
+    except Exception as e:
+        return False, f'Error al subir archivo por FTP: {e}'
+
 
 # =============================
 # INICIO DE LA APLICACIÓN
