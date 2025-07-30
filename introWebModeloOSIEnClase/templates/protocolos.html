@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Protocolos del Modelo OSI</title>
+</head>
+<body>
+    <h1>Protocolos del Modelo OSI</h1>
+    <nav>
+        <a href="/">Inicio</a> | <a href="/redes">Redes</a>
+    </nav>
+    <p>En esta página se describen los protocolos que forman parte del modelo OSI. Aquí podrás agregar nuevos protocolos y ver los existentes en la base de datos.</p>
+    <h2>Agregar nuevo protocolo</h2>
+    <form method="post">
+        <label>Nombre:</label><br>
+        <input type="text" name="nombre"><br>
+        <label>Acrónimo:</label><br>
+        <input type="text" name="acronimo"><br>
+        <label>Nombre de la capa:</label><br>
+        <input type="text" name="nombreCapa"><br>
+        <label>Fecha de actualización:</label><br>
+        <input type="date" name="fechaActualizacion"><br>
+        <label>Descripción:</label><br>
+        <textarea name="descripcion"></textarea><br>
+        <input type="submit" value="Agregar">
+    </form>
+    <h2>Protocolos registrados</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acrónimo</th>
+            <th>Nombre de la capa</th>
+            <th>Fecha de actualización</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+        <!-- Aquí se mostrarán los protocolos de la base de datos -->
+    </table>
+    <p><em>Las acciones de editar y eliminar estarán disponibles próximamente.</em></p>
+</body>
+</html> 
