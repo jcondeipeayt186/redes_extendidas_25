@@ -2,41 +2,123 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protocolos del Modelo OSI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 <body>
-    <h1>Protocolos del Modelo OSI</h1>
-    <nav>
-        <a href="/">Inicio</a> | <a href="/redes">Redes</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Modelo OSI y Redes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/protocolos">Protocolos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <p>En esta página se describen los protocolos que forman parte del modelo OSI. Aquí podrás agregar nuevos protocolos y ver los existentes en la base de datos.</p>
-    <h2>Agregar nuevo protocolo</h2>
-    <form method="post">
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre"><br>
-        <label>Acrónimo:</label><br>
-        <input type="text" name="acronimo"><br>
-        <label>Nombre de la capa:</label><br>
-        <input type="text" name="nombreCapa"><br>
-        <label>Fecha de actualización:</label><br>
-        <input type="date" name="fechaActualizacion"><br>
-        <label>Descripción:</label><br>
-        <textarea name="descripcion"></textarea><br>
-        <input type="submit" value="Agregar">
-    </form>
-    <h2>Protocolos registrados</h2>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Acrónimo</th>
-            <th>Nombre de la capa</th>
-            <th>Fecha de actualización</th>
-            <th>Descripción</th>
-            <th>Acciones</th>
-        </tr>
-        <!-- Aquí se mostrarán los protocolos de la base de datos -->
-    </table>
-    <p><em>Las acciones de editar y eliminar estarán disponibles próximamente.</em></p>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Protocolos del Modelo OSI</h1>
+        
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow mb-4">
+                    <div class="card-header">
+                        <h2 class="card-title h4 mb-0">Agregar nuevo protocolo</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="acronimo" class="form-label">Acrónimo:</label>
+                                    <input type="text" class="form-control" id="acronimo" name="acronimo" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombreCapa" class="form-label">Nombre de la capa:</label>
+                                    <input type="text" class="form-control" id="nombreCapa" name="nombreCapa" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="fechaActualizacion" class="form-label">Fecha de actualización:</label>
+                                    <input type="date" class="form-control" id="fechaActualizacion" name="fechaActualizacion" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción:</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar Protocolo</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h2 class="card-title h4 mb-0">Protocolos registrados</h2>
+                    </div>
+                    <div class="card-body">
+                        {% if protocolos %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Acrónimo</th>
+                                        <th>Nombre de la capa</th>
+                                        <th>Fecha de actualización</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for protocolo in protocolos %}
+                                    <tr>
+                                        <td><span class="badge bg-secondary">{{ protocolo.id }}</span></td>
+                                        <td><strong>{{ protocolo.nombre }}</strong></td>
+                                        <td><code>{{ protocolo.acronimo }}</code></td>
+                                        <td>{{ protocolo.nombreCapa }}</td>
+                                        <td>{{ protocolo.fechaActualizacion }}</td>
+                                        <td>{{ protocolo.descripcion }}</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <a href="{{ url_for('editar_protocolo', id=protocolo.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                                                <form action="{{ url_for('eliminar_protocolo_route', id=protocolo.id) }}" method="post" style="display:inline;">
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este protocolo?');">Eliminar</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% else %}
+                        <div class="alert alert-info text-center">
+                            <h5>No hay protocolos registrados</h5>
+                            <p>Agrega el primer protocolo usando el formulario de arriba.</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='css/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html> 

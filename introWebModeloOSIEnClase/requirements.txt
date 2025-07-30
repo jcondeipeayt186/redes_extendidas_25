@@ -1,2 +1,3 @@
 Flask
-mysql-connector-python 
+mysql-connector-python
+Jinja2 

@@ -2,47 +2,147 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redes de Computadoras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 <body>
-    <h1>Redes de Computadoras</h1>
-    <nav>
-        <a href="/">Inicio</a> | <a href="/protocolos">Protocolos</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Modelo OSI y Redes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <h2>¿Qué es una red de computadoras?</h2>
-    <p>Una red de computadoras es un conjunto de dispositivos interconectados que pueden comunicarse y compartir recursos. Por ejemplo, imagina enviar un mensaje desde una computadora en Las Higueras, Córdoba, Argentina, hasta un celular en Génova, Italia. El mensaje viaja a través de diferentes dispositivos y redes, cruzando países y continentes, hasta llegar a su destino.</p>
-    <h2>Dispositivos de red</h2>
-    <ul>
-        <li>Computadoras y servidores</li>
-        <li>Switches</li>
-        <li>Routers</li>
-        <li>Puntos de acceso inalámbrico</li>
-        <li>Modems</li>
-        <li>Firewalls</li>
-    </ul>
-    <h2>Topologías de red</h2>
-    <ul>
-        <li>Estrella</li>
-        <li>Bus</li>
-        <li>Anillo</li>
-        <li>Malla</li>
-        <li>Árbol</li>
-        <li>Híbrida</li>
-    </ul>
-    <h2>Tipos de red</h2>
-    <ul>
-        <li>LAN (Red de Área Local)</li>
-        <li>MAN (Red de Área Metropolitana)</li>
-        <li>WAN (Red de Área Amplia)</li>
-        <li>WLAN (Red de Área Local Inalámbrica)</li>
-        <li>VPN (Red Privada Virtual)</li>
-    </ul>
-    <h2>Modelos de referencia</h2>
-    <h3>Modelo TCP/IP</h3>
-    <p>El modelo TCP/IP es el conjunto de protocolos fundamentales para Internet. Se compone de cuatro capas: Acceso a la red, Internet, Transporte y Aplicación.</p>
-    <h3>Modelo OSI</h3>
-    <p>El modelo OSI (Open Systems Interconnection) es un modelo conceptual de siete capas que describe cómo se comunican los sistemas de red.</p>
-    <h2>Breve historia de las redes de computadoras</h2>
-    <p>Las redes de computadoras surgieron en la década de 1960 con ARPANET, precursor de Internet. Desde entonces, han evolucionado hasta conectar miles de millones de dispositivos en todo el mundo.</p>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Redes de Computadoras</h1>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">¿Qué es una red de computadoras?</h2>
+                        <p class="card-text">Una red de computadoras es un conjunto de dispositivos interconectados que pueden comunicarse y compartir recursos. Por ejemplo, imagina enviar un mensaje desde una computadora en Las Higueras, Córdoba, Argentina, hasta un celular en Génova, Italia. El mensaje viaja a través de diferentes dispositivos y redes, cruzando países y continentes, hasta llegar a su destino.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h3 class="card-title h5">Dispositivos de red</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Computadoras y servidores</li>
+                                    <li class="list-group-item">Switches</li>
+                                    <li class="list-group-item">Routers</li>
+                                    <li class="list-group-item">Puntos de acceso inalámbrico</li>
+                                    <li class="list-group-item">Modems</li>
+                                    <li class="list-group-item">Firewalls</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h3 class="card-title h5">Topologías de red</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Estrella</li>
+                                    <li class="list-group-item">Bus</li>
+                                    <li class="list-group-item">Anillo</li>
+                                    <li class="list-group-item">Malla</li>
+                                    <li class="list-group-item">Árbol</li>
+                                    <li class="list-group-item">Híbrida</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3 class="card-title h4">Tipos de red</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="alert alert-info">
+                                    <strong>LAN</strong> (Red de Área Local)
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-warning">
+                                    <strong>MAN</strong> (Red de Área Metropolitana)
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-danger">
+                                    <strong>WAN</strong> (Red de Área Amplia)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <strong>WLAN</strong> (Red de Área Local Inalámbrica)
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-secondary">
+                                    <strong>VPN</strong> (Red Privada Virtual)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3 class="card-title h4">Modelos de referencia</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Modelo TCP/IP</h4>
+                                <p>El modelo TCP/IP es el conjunto de protocolos fundamentales para Internet. Se compone de cuatro capas: Acceso a la red, Internet, Transporte y Aplicación.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Modelo OSI</h4>
+                                <p>El modelo OSI (Open Systems Interconnection) es un modelo conceptual de siete capas que describe cómo se comunican los sistemas de red.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title h4">Breve historia de las redes de computadoras</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Las redes de computadoras surgieron en la década de 1960 con ARPANET, precursor de Internet. Desde entonces, han evolucionado hasta conectar miles de millones de dispositivos en todo el mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='css/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html> 

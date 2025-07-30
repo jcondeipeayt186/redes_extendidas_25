@@ -8,8 +8,8 @@ def obtener_conexion():
     # Cambia el usuario y la contraseña según tu configuración de MySQL
     conexion = mysql.connector.connect(
         host='localhost',         # Dirección del servidor MySQL
-        user='usuario',              # Usuario de MySQL (ajusta según tu configuración)
-        password='clave',              # Contraseña de MySQL (ajusta según tu configuración)
+        user='jconde186',              # Usuario de MySQL (ajusta según tu configuración)
+        password='Casta186&',              # Contraseña de MySQL (ajusta según tu configuración)
         database='redesiniciandoflask'  # Nombre de la base de datos
     )
     return conexion  # Retornamos el objeto de conexión 

@@ -2,24 +2,72 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Modelo OSI y Redes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 <body>
-    <h1>Aplicación Web: Modelo OSI y Redes de Computadoras</h1>
-    <p>Esta es una aplicación web educativa que trata sobre redes de computadoras. Utiliza las siguientes tecnologías:</p>
-    <ul>
-        <li>Python</li>
-        <li>Flask (framework web)</li>
-        <li>MySQL (base de datos)</li>
-        <li>mysql-connector-python (conector de Python a MySQL)</li>
-        <li>HTML5</li>
-    </ul>
-    <img src="/static/img/red1.png" alt="Imagen representativa de redes de computadoras" width="400">
-    <nav>
-        <ul>
-            <li><a href="/redes">Redes</a></li>
-            <li><a href="/protocolos">Protocolos</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Modelo OSI y Redes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Aplicación Web: Modelo OSI y Redes de Computadoras</h1>
+                        <p class="card-text lead">Esta es una aplicación web educativa que trata sobre redes de computadoras. Utiliza las siguientes tecnologías:</p>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <h5>Tecnologías Backend:</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Python</li>
+                                    <li class="list-group-item">Flask (framework web)</li>
+                                    <li class="list-group-item">MySQL (base de datos)</li>
+                                    <li class="list-group-item">mysql-connector-python</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Tecnologías Frontend:</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">HTML5</li>
+                                    <li class="list-group-item">Bootstrap 5.3.2</li>
+                                    <li class="list-group-item">CSS3</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="text-center mb-4">
+                            <img src="/static/img/red1.png" alt="Imagen representativa de redes de computadoras" class="img-fluid rounded" style="max-width: 400px;">
+                        </div>
+
+                        <div class="text-center">
+                            <a href="/redes" class="btn btn-primary me-2">Explorar Redes</a>
+                            <a href="/protocolos" class="btn btn-success">Gestionar Protocolos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='css/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html> 
