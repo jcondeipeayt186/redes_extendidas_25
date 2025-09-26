@@ -119,7 +119,13 @@ def modificar_protocolo(pid: int):
 
     return redirect(url_for("protocolos_view"))
 
+@app.route("/7b-redes")
+def redes():
+    return "Ahora pueden comenzar a programar web en Python con Flask. Aun no integramos MySQL."
 
+@app.route("/prueba")
+def prueba():
+    return "Probando Flask"    
 # =====================================================================
 # Punto de entrada de la aplicación
 # ---------------------------------------------------------------------
