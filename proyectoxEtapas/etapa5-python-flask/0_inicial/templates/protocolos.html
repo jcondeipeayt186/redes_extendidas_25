@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Protocolos{% endblock %}
+
+{% block content %}
+<h2>Protocolos</h2>
+
+<section>
+    <h3>{% if edit_item %}Modificar protocolo{% else %}Agregar protocolo{% endif %}</h3>
+    <form method="post" action="{% if edit_item %}{{ url_for('modificar_protocolo', pid=edit_item.id) }}{% else %}{{ url_for('protocolos_view') }}{% endif %}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ edit_item.nombre if edit_item else '' }}" required>
+        <br>
+
+        <label for="capa">Capa (OSI):</label>
+        <select id="capa" name="capa" required>
+            <option value="">Selecciona una capa</option>
+            {% set capa_sel = edit_item.capa if edit_item else '' %}
+            <option value="Capa 7 - Aplicación" {% if capa_sel == 'Capa 7 - Aplicación' %}selected{% endif %}>Capa 7 - Aplicación</option>
+            <option value="Capa 6 - Presentación" {% if capa_sel == 'Capa 6 - Presentación' %}selected{% endif %}>Capa 6 - Presentación</option>
+            <option value="Capa 5 - Sesión" {% if capa_sel == 'Capa 5 - Sesión' %}selected{% endif %}>Capa 5 - Sesión</option>
+            <option value="Capa 4 - Transporte" {% if capa_sel == 'Capa 4 - Transporte' %}selected{% endif %}>Capa 4 - Transporte</option>
+            <option value="Capa 3 - Red" {% if capa_sel == 'Capa 3 - Red' %}selected{% endif %}>Capa 3 - Red</option>
+            <option value="Capa 2 - Enlace de Datos" {% if capa_sel == 'Capa 2 - Enlace de Datos' %}selected{% endif %}>Capa 2 - Enlace de Datos</option>
+            <option value="Capa 1 - Física" {% if capa_sel == 'Capa 1 - Física' %}selected{% endif %}>Capa 1 - Física</option>
+        </select>
+        <br>
+
+        <button type="submit">{% if edit_item %}Guardar cambios{% else %}Agregar{% endif %}</button>
+        {% if edit_item %}
+            <a href="{{ url_for('protocolos_view') }}">Cancelar</a>
+        {% endif %}
+    </form>
+</section>
+
+<hr>
+
+<section>
+    <h3>Lista de protocolos</h3>
+    {% if protocolos %}
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Capa</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in protocolos %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.nombre }}</td>
+                <td>{{ p.capa }}</td>
+                <td>
+                    <a href="{{ url_for('protocolos_view', edit=p.id) }}">Editar</a> |
+                    <a href="{{ url_for('eliminar_protocolo', pid=p.id) }}" onclick="return confirm('¿Estás seguro de eliminar este protocolo?');">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No hay protocolos cargados.</p>
+    {% endif %}
+</section>
+{% endblock %}
+
+

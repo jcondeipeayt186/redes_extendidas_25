@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 4 - Transporte - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 4 - Transporte</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa de Transporte?</h2>
+            <p>La Capa de Transporte es la cuarta capa del modelo OSI y se encarga de proporcionar comunicación confiable y eficiente entre aplicaciones que se ejecutan en diferentes dispositivos. Esta capa garantiza que los datos lleguen completos, en el orden correcto y sin errores.</p>
+            
+            <p>Sus funciones principales incluyen el control de flujo, la detección y corrección de errores, el control de congestión, la segmentación y reensamblaje de datos, y la multiplexación de múltiples aplicaciones en una sola conexión de red.</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa de Transporte</h2>
+            
+            <h3>TCP (Transmission Control Protocol)</h3>
+            <p><strong>Descripción:</strong> Es un protocolo orientado a conexión que garantiza la entrega confiable de datos en el orden correcto.</p>
+            <p><strong>Función:</strong> Establece conexiones virtuales, controla el flujo de datos, detecta y corrige errores, y reensambla los segmentos en el orden correcto.</p>
+            
+            <h3>UDP (User Datagram Protocol)</h3>
+            <p><strong>Descripción:</strong> Es un protocolo no orientado a conexión que proporciona transmisión rápida pero no garantiza la entrega ni el orden.</p>
+            <p><strong>Función:</strong> Envía datagramas independientes sin establecer conexión previa, ideal para aplicaciones que requieren velocidad sobre confiabilidad.</p>
+            
+            <h3>SCTP (Stream Control Transmission Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo moderno que combina las mejores características de TCP y UDP, diseñado para aplicaciones de telecomunicaciones.</p>
+            <p><strong>Función:</strong> Proporciona transmisión confiable con múltiples streams, detección de errores y control de congestión.</p>
+            
+            <h3>DCCP (Datagram Congestion Control Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo que proporciona control de congestión para aplicaciones que no requieren entrega confiable.</p>
+            <p><strong>Función:</strong> Combina la simplicidad de UDP con el control de congestión de TCP, ideal para aplicaciones multimedia en tiempo real.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa de Transporte:</p>
+            
+            <h3>1. Comparación TCP vs UDP</h3>
+            <p>Esta prueba te permite experimentar con las diferencias entre TCP y UDP:</p>
+            <ul>
+                <li>Simula transmisión de datos con TCP (orientado a conexión)</li>
+                <li>Simula transmisión de datos con UDP (no orientado a conexión)</li>
+                <li>Observa el establecimiento de conexión TCP (3-way handshake)</li>
+                <li>Compara velocidades y confiabilidad de ambos protocolos</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> TCP, UDP</p>
+            <p><strong>Conceptos de red:</strong> Orientación a conexión, control de flujo, confiabilidad</p>
+            
+            <h3>2. Análisis de Puertos y Conexiones</h3>
+            <p>Explora el sistema de puertos y conexiones:</p>
+            <ul>
+                <li>Visualiza puertos bien conocidos (0-1023)</li>
+                <li>Simula el establecimiento de conexiones TCP</li>
+                <li>Analiza el estado de conexiones (ESTABLISHED, LISTENING, etc.)</li>
+                <li>Experimenta con multiplexación de aplicaciones</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> TCP, UDP</p>
+            <p><strong>Conceptos de red:</strong> Puertos, conexiones, multiplexación, estados de conexión</p>
+            
+            <h3>3. Control de Flujo y Congestión</h3>
+            <p>Aprende sobre mecanismos de control:</p>
+            <ul>
+                <li>Simula control de flujo con ventana deslizante</li>
+                <li>Observa algoritmos de control de congestión</li>
+                <li>Analiza el comportamiento de TCP en redes congestionadas</li>
+                <li>Experimenta con diferentes tamaños de ventana</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> TCP</p>
+            <p><strong>Conceptos de red:</strong> Control de flujo, control de congestión, ventana deslizante</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Transmisión de un Mensaje</h2>
+            <p>Cuando envías un mensaje desde Higueras a Zarautz, la Capa de Transporte:</p>
+            <ol>
+                <li><strong>Segmentación:</strong> Tu mensaje se divide en segmentos de tamaño manejable</li>
+                <li><strong>Establecimiento de conexión:</strong> TCP establece una conexión virtual con tu amigo en España</li>
+                <li><strong>Transmisión:</strong> Los segmentos se envían uno por uno con números de secuencia</li>
+                <li><strong>Control de flujo:</strong> Se ajusta la velocidad de transmisión según la capacidad del receptor</li>
+                <li><strong>Detección de errores:</strong> Se verifica la integridad de cada segmento recibido</li>
+                <li><strong>Reensamblaje:</strong> Los segmentos se reensamblan en el orden correcto</li>
+                <li><strong>Confirmación:</strong> Se confirma la recepción exitosa del mensaje completo</li>
+            </ol>
+        </section>
+
+        <section id="puertos-bien-conocidos">
+            <h2>Puertos Bien Conocidos</h2>
+            <p>Los puertos del 0 al 1023 están reservados para servicios estándar:</p>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Puerto</th>
+                        <th>Protocolo</th>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20, 21</td>
+                        <td>TCP</td>
+                        <td>FTP</td>
+                        <td>Transferencia de archivos</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>TCP</td>
+                        <td>SSH</td>
+                        <td>Conexión segura remota</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>TCP</td>
+                        <td>Telnet</td>
+                        <td>Conexión remota (no segura)</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>TCP</td>
+                        <td>SMTP</td>
+                        <td>Envío de correo electrónico</td>
+                    </tr>
+                    <tr>
+                        <td>53</td>
+                        <td>TCP/UDP</td>
+                        <td>DNS</td>
+                        <td>Resolución de nombres de dominio</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>TCP</td>
+                        <td>HTTP</td>
+                        <td>Navegación web</td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>TCP</td>
+                        <td>POP3</td>
+                        <td>Recepción de correo electrónico</td>
+                    </tr>
+                    <tr>
+                        <td>143</td>
+                        <td>TCP</td>
+                        <td>IMAP</td>
+                        <td>Acceso a correo electrónico</td>
+                    </tr>
+                    <tr>
+                        <td>443</td>
+                        <td>TCP</td>
+                        <td>HTTPS</td>
+                        <td>Navegación web segura</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="estados-conexion-tcp">
+            <h2>Estados de Conexión TCP</h2>
+            <p>Una conexión TCP pasa por varios estados durante su ciclo de vida:</p>
+            <ol>
+                <li><strong>CLOSED:</strong> No hay conexión activa</li>
+                <li><strong>LISTEN:</strong> El servidor espera conexiones entrantes</li>
+                <li><strong>SYN_SENT:</strong> El cliente ha enviado SYN, espera respuesta</li>
+                <li><strong>SYN_RECEIVED:</strong> El servidor ha recibido SYN, enviado SYN+ACK</li>
+                <li><strong>ESTABLISHED:</strong> Conexión establecida, intercambio de datos</li>
+                <li><strong>FIN_WAIT_1:</strong> Aplicación ha cerrado, enviado FIN</li>
+                <li><strong>FIN_WAIT_2:</strong> FIN enviado, esperando FIN del otro lado</li>
+                <li><strong>CLOSE_WAIT:</strong> FIN recibido, esperando que la aplicación cierre</li>
+                <li><strong>LAST_ACK:</strong> Enviado FIN, esperando ACK</li>
+                <li><strong>TIME_WAIT:</strong> Esperando tiempo para asegurar que ACK llegue</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="red.html">Anterior: Capa 3 - Red</a> | <a href="sesion.html">Siguiente: Capa 5 - Sesión</a></p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 3 - Red - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 3 - Red</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa de Red?</h2>
+            <p>La Capa de Red es la tercera capa del modelo OSI y se encarga del enrutamiento y direccionamiento lógico de los paquetes de datos a través de la red. Esta capa determina la mejor ruta para que los datos lleguen desde el origen hasta el destino, incluso si están en redes diferentes.</p>
+            
+            <p>Sus funciones principales incluyen el direccionamiento lógico mediante direcciones IP, el enrutamiento de paquetes entre redes, la fragmentación de datos grandes, y el control de congestión de la red.</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa de Red</h2>
+            
+            <h3>IP (Internet Protocol)</h3>
+            <p><strong>Descripción:</strong> Es el protocolo principal de internet que proporciona direccionamiento lógico y enrutamiento de paquetes.</p>
+            <p><strong>Función:</strong> Asigna direcciones IP únicas a cada dispositivo, fragmenta paquetes grandes y determina la ruta de transmisión.</p>
+            
+            <h3>ICMP (Internet Control Message Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo de control que permite a los dispositivos de red enviar mensajes de error y control.</p>
+            <p><strong>Función:</strong> Proporciona información sobre el estado de la red, errores de transmisión y mensajes de control como ping.</p>
+            
+            <h3>ARP (Address Resolution Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo que mapea direcciones IP a direcciones MAC en redes locales.</p>
+            <p><strong>Función:</strong> Permite que los dispositivos encuentren la dirección MAC correspondiente a una dirección IP específica.</p>
+            
+            <h3>RIP (Routing Information Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo de enrutamiento dinámico que permite a los routers compartir información sobre la topología de la red.</p>
+            <p><strong>Función:</strong> Los routers intercambian información sobre las rutas disponibles y calculan las mejores rutas hacia cada destino.</p>
+            
+            <h3>OSPF (Open Shortest Path First)</h3>
+            <p><strong>Descripción:</strong> Protocolo de enrutamiento avanzado que calcula las rutas más cortas basándose en el estado de los enlaces.</p>
+            <p><strong>Función:</strong> Proporciona enrutamiento eficiente y convergencia rápida en redes grandes y complejas.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa de Red:</p>
+            
+            <h3>1. Análisis de Direcciones IP</h3>
+            <p>Esta prueba te permite entender el direccionamiento IP:</p>
+            <ul>
+                <li>Convierte direcciones IP entre formato decimal y binario</li>
+                <li>Identifica la clase de red y máscara de subred</li>
+                <li>Calcula direcciones de red y broadcast</li>
+                <li>Analiza rangos de direcciones IP válidas</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> IP (IPv4 e IPv6)</p>
+            <p><strong>Conceptos de red:</strong> Direccionamiento IP, subredes, máscaras de red</p>
+            
+            <h3>2. Simulación de Enrutamiento</h3>
+            <p>Experimenta con el proceso de enrutamiento de paquetes:</p>
+            <ul>
+                <li>Visualiza tablas de enrutamiento</li>
+                <li>Simula el envío de paquetes entre redes</li>
+                <li>Analiza diferentes algoritmos de enrutamiento</li>
+                <li>Observa el proceso de fragmentación de paquetes</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> IP, RIP, OSPF</p>
+            <p><strong>Conceptos de red:</strong> Enrutamiento, tablas de enrutamiento, algoritmos de enrutamiento</p>
+            
+            <h3>3. Herramientas de Diagnóstico de Red</h3>
+            <p>Utiliza herramientas de diagnóstico comunes:</p>
+            <ul>
+                <li>Simulación de comando ping (ICMP)</li>
+                <li>Análisis de trazas de ruta (traceroute)</li>
+                <li>Resolución de nombres DNS</li>
+                <li>Verificación de conectividad de red</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> ICMP, DNS, ARP</p>
+            <p><strong>Conceptos de red:</strong> Diagnóstico de red, resolución de problemas, conectividad</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Enrutamiento de un Mensaje</h2>
+            <p>Cuando envías un mensaje desde Higueras a Zarautz, la Capa de Red:</p>
+            <ol>
+                <li><strong>Direccionamiento:</strong> Tu mensaje se empaqueta con tu IP origen y la IP destino de tu amigo en España</li>
+                <li><strong>Enrutamiento local:</strong> El paquete se envía al router de tu proveedor de internet en Córdoba</li>
+                <li><strong>Enrutamiento nacional:</strong> El paquete viaja por la red troncal de Argentina hacia Buenos Aires</li>
+                <li><strong>Enrutamiento internacional:</strong> El paquete cruza el océano Atlántico por cables submarinos</li>
+                <li><strong>Enrutamiento europeo:</strong> El paquete llega a España y se enruta hacia el País Vasco</li>
+                <li><strong>Entrega final:</strong> El paquete llega a Zarautz y se entrega a tu amigo</li>
+            </ol>
+        </section>
+
+        <section id="direcciones-ip">
+            <h2>Direcciones IP</h2>
+            <p>Las direcciones IP identifican de manera única cada dispositivo en una red:</p>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Versión</th>
+                        <th>Formato</th>
+                        <th>Ejemplo</th>
+                        <th>Características</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IPv4</td>
+                        <td>XXX.XXX.XXX.XXX</td>
+                        <td>192.168.1.100</td>
+                        <td>32 bits, 4 octetos, formato decimal</td>
+                    </tr>
+                    <tr>
+                        <td>IPv6</td>
+                        <td>XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX</td>
+                        <td>2001:0db8:85a3:0000:0000:8a2e:0370:7334</td>
+                        <td>128 bits, 8 grupos hexadecimales</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="clases-ip">
+            <h2>Clases de Direcciones IPv4</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Rango</th>
+                        <th>Máscara por defecto</th>
+                        <th>Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>1.0.0.0 - 126.255.255.255</td>
+                        <td>255.0.0.0</td>
+                        <td>Redes muy grandes</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>128.0.0.0 - 191.255.255.255</td>
+                        <td>255.255.0.0</td>
+                        <td>Redes medianas</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>192.0.0.0 - 223.255.255.255</td>
+                        <td>255.255.255.0</td>
+                        <td>Redes pequeñas</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>224.0.0.0 - 239.255.255.255</td>
+                        <td>N/A</td>
+                        <td>Multicast</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>240.0.0.0 - 255.255.255.255</td>
+                        <td>N/A</td>
+                        <td>Experimental</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="enlace.html">Anterior: Capa 2 - Enlace</a> | <a href="transporte.html">Siguiente: Capa 4 - Transporte</a></p>
+    </footer>
+</body>
+</html> 

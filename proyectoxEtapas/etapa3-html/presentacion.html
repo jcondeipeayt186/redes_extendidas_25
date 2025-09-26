@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 6 - Presentación - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 6 - Presentación</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa de Presentación?</h2>
+            <p>La Capa de Presentación es la sexta capa del modelo OSI y se encarga de la representación, codificación y transformación de datos para que las aplicaciones puedan entenderlos independientemente de sus formatos nativos. Esta capa actúa como un traductor entre diferentes sistemas.</p>
+            
+            <p>Sus funciones principales incluyen la codificación y decodificación de datos, la compresión y descompresión, el cifrado y descifrado, y la conversión de formatos de datos entre diferentes sistemas operativos y aplicaciones.</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa de Presentación</h2>
+            
+            <h3>SSL/TLS (Secure Sockets Layer/Transport Layer Security)</h3>
+            <p><strong>Descripción:</strong> Protocolos de seguridad que proporcionan cifrado y autenticación para comunicaciones de red.</p>
+            <p><strong>Función:</strong> Cifra los datos antes de la transmisión, verifica la identidad del servidor y garantiza la integridad de los datos.</p>
+            
+            <h3>MIME (Multipurpose Internet Mail Extensions)</h3>
+            <p><strong>Descripción:</strong> Estándar que define cómo se codifican y transmiten diferentes tipos de archivos a través de internet.</p>
+            <p><strong>Función:</strong> Identifica el tipo de contenido, especifica la codificación y permite la transmisión de archivos multimedia por correo electrónico.</p>
+            
+            <h3>JPEG, PNG, GIF</h3>
+            <p><strong>Descripción:</strong> Formatos de compresión de imágenes que reducen el tamaño de los archivos manteniendo la calidad visual.</p>
+            <p><strong>Función:</strong> Comprimen imágenes para transmisión eficiente por red y las descomprimen para visualización.</p>
+            
+            <h3>MP3, AAC, WAV</h3>
+            <p><strong>Descripción:</strong> Formatos de compresión de audio que permiten la transmisión eficiente de archivos de sonido.</p>
+            <p><strong>Función:</strong> Comprimen archivos de audio, mantienen la calidad perceptible y optimizan el ancho de banda.</p>
+            
+            <h3>ZIP, RAR, 7z</h3>
+            <p><strong>Descripción:</strong> Formatos de compresión de archivos que reducen el tamaño de cualquier tipo de archivo.</p>
+            <p><strong>Función:</strong> Comprimen múltiples archivos en uno solo, reducen el tamaño total y facilitan la transmisión por red.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa de Presentación:</p>
+            
+            <h3>1. Compresión y Descompresión de Datos</h3>
+            <p>Esta prueba te permite experimentar con diferentes algoritmos de compresión:</p>
+            <ul>
+                <li>Comprime archivos de texto usando diferentes algoritmos</li>
+                <li>Compara tasas de compresión entre formatos</li>
+                <li>Simula la transmisión de archivos comprimidos</li>
+                <li>Analiza la relación entre compresión y calidad</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> ZIP, JPEG, MP3</p>
+            <p><strong>Conceptos de red:</strong> Compresión de datos, optimización de ancho de banda, algoritmos de compresión</p>
+            
+            <h3>2. Conversión de Formatos de Datos</h3>
+            <p>Experimenta con la transformación de datos entre formatos:</p>
+            <ul>
+                <li>Convierte texto entre diferentes codificaciones (ASCII, UTF-8, UTF-16)</li>
+                <li>Transforma imágenes entre formatos (JPEG, PNG, GIF)</li>
+                <li>Convierte audio entre formatos (MP3, WAV, AAC)</li>
+                <li>Analiza la compatibilidad entre diferentes sistemas</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> MIME, JPEG, PNG, MP3</p>
+            <p><strong>Conceptos de red:</strong> Codificación de caracteres, formatos de archivo, compatibilidad de sistemas</p>
+            
+            <h3>3. Cifrado y Seguridad de Datos</h3>
+            <p>Aprende sobre la protección de datos en tránsito:</p>
+            <ul>
+                <li>Simula el cifrado de mensajes usando diferentes algoritmos</li>
+                <li>Observa el proceso de cifrado/descifrado SSL/TLS</li>
+                <li>Analiza diferentes niveles de seguridad</li>
+                <li>Experimenta con la verificación de integridad de datos</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> SSL/TLS, MIME</p>
+            <p><strong>Conceptos de red:</strong> Cifrado, autenticación, integridad de datos, seguridad</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Transmisión de una Imagen</h2>
+            <p>Cuando envías una foto desde Higueras a Zarautz, la Capa de Presentación:</p>
+            <ol>
+                <li><strong>Identificación:</strong> Reconoce que es un archivo de imagen (formato JPG)</li>
+                <li><strong>Compresión:</strong> Comprime la imagen para reducir su tamaño de transmisión</li>
+                <li><strong>Codificación:</strong> Convierte la imagen a un formato estándar compatible</li>
+                <li><strong>Formato MIME:</strong> Agrega información sobre el tipo de contenido</li>
+                <li><strong>Transmisión:</strong> Los datos codificados se envían a través de la red</li>
+                <li><strong>Recepción:</strong> En España, se reciben los datos codificados</li>
+                <li><strong>Decodificación:</strong> Se convierte la imagen de vuelta a su formato original</li>
+                <li><strong>Descompresión:</strong> Se restaura la imagen a su tamaño y calidad original</li>
+            </ol>
+        </section>
+
+        <section id="formatos-mime">
+            <h2>Tipos MIME Comunes</h2>
+            <p>Los tipos MIME identifican el tipo de contenido que se está transmitiendo:</p>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Tipo MIME</th>
+                        <th>Extensión</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo de Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>text/plain</td>
+                        <td>.txt</td>
+                        <td>Texto plano sin formato</td>
+                        <td>Archivos de texto, notas</td>
+                    </tr>
+                    <tr>
+                        <td>text/html</td>
+                        <td>.html, .htm</td>
+                        <td>Documento HTML</td>
+                        <td>Páginas web</td>
+                    </tr>
+                    <tr>
+                        <td>image/jpeg</td>
+                        <td>.jpg, .jpeg</td>
+                        <td>Imagen JPEG</td>
+                        <td>Fotografías digitales</td>
+                    </tr>
+                    <tr>
+                        <td>image/png</td>
+                        <td>.png</td>
+                        <td>Imagen PNG</td>
+                        <td>Imágenes con transparencia</td>
+                    </tr>
+                    <tr>
+                        <td>audio/mpeg</td>
+                        <td>.mp3</td>
+                        <td>Audio MP3</td>
+                        <td>Archivos de música</td>
+                    </tr>
+                    <tr>
+                        <td>video/mp4</td>
+                        <td>.mp4</td>
+                        <td>Video MP4</td>
+                        <td>Películas, videos</td>
+                    </tr>
+                    <tr>
+                        <td>application/pdf</td>
+                        <td>.pdf</td>
+                        <td>Documento PDF</td>
+                        <td>Documentos oficiales</td>
+                    </tr>
+                    <tr>
+                        <td>application/zip</td>
+                        <td>.zip</td>
+                        <td>Archivo comprimido ZIP</td>
+                        <td>Archivos comprimidos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="codificaciones-caracteres">
+            <h2>Codificaciones de Caracteres</h2>
+            <p>Diferentes sistemas pueden usar diferentes codificaciones de caracteres:</p>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Codificación</th>
+                        <th>Descripción</th>
+                        <th>Caracteres</th>
+                        <th>Uso Típico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ASCII</td>
+                        <td>American Standard Code for Information Interchange</td>
+                        <td>128 caracteres (inglés)</td>
+                        <td>Sistemas antiguos, inglés</td>
+                    </tr>
+                    <tr>
+                        <td>UTF-8</td>
+                        <td>Unicode Transformation Format - 8 bits</td>
+                        <td>1,112,064 caracteres</td>
+                        <td>Web, sistemas modernos</td>
+                    </tr>
+                    <tr>
+                        <td>UTF-16</td>
+                        <td>Unicode Transformation Format - 16 bits</td>
+                        <td>1,112,064 caracteres</td>
+                        <td>Sistemas Windows, Java</td>
+                    </tr>
+                    <tr>
+                        <td>ISO-8859-1</td>
+                        <td>Latin-1 Western European</td>
+                        <td>256 caracteres</td>
+                        <td>Europa occidental</td>
+                    </tr>
+                    <tr>
+                        <td>Windows-1252</td>
+                        <td>Windows Western European</td>
+                        <td>256 caracteres</td>
+                        <td>Sistemas Windows</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="sesion.html">Anterior: Capa 5 - Sesión</a> | <a href="aplicacion.html">Siguiente: Capa 7 - Aplicación</a></p>
+    </footer>
+</body>
+</html> 

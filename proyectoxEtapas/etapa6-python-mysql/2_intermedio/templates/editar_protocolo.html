@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Protocolo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Modelo OSI y Redes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/protocolos">Protocolos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h1 class="card-title h3 mb-0">Editar Protocolo</h1>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{ protocolo.nombre }}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="acronimo" class="form-label">Acrónimo:</label>
+                                    <input type="text" class="form-control" id="acronimo" name="acronimo" value="{{ protocolo.acronimo }}" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombreCapa" class="form-label">Nombre de la capa:</label>
+                                    <input type="text" class="form-control" id="nombreCapa" name="nombreCapa" value="{{ protocolo.nombreCapa }}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="fechaActualizacion" class="form-label">Fecha de actualización:</label>
+                                    <input type="date" class="form-control" id="fechaActualizacion" name="fechaActualizacion" value="{{ protocolo.fechaActualizacion }}" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción:</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required>{{ protocolo.descripcion }}</textarea>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="/protocolos" class="btn btn-secondary">Cancelar</a>
+                                <button type="submit" class="btn btn-primary">Actualizar Protocolo</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='css/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html> 

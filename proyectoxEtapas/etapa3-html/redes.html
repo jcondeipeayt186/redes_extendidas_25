@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Redes de Computadoras</title>
+</head>
+<body>
+    <header>
+        <h1>Introducción a Redes de Computadoras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="conceptos-basicos">
+            <h2>Conceptos Básicos de Redes</h2>
+            <p>Una red de computadoras es un conjunto de dispositivos informáticos conectados entre sí que comparten recursos e información. Estas conexiones pueden ser físicas (cables) o inalámbricas (WiFi, Bluetooth).</p>
+            
+            <p>Las redes permiten la comunicación entre computadoras, el intercambio de archivos, el acceso compartido a recursos como impresoras o internet, y la colaboración en tiempo real entre usuarios.</p>
+        </section>
+
+        <section id="tipos-redes">
+            <h2>Tipos de Redes</h2>
+            <h3>Por Alcance Geográfico</h3>
+            <ul>
+                <li><strong>PAN (Personal Area Network):</strong> Red personal que conecta dispositivos cercanos (ej: smartphone, laptop, auriculares)</li>
+                <li><strong>LAN (Local Area Network):</strong> Red local que conecta dispositivos en un área limitada como una casa, oficina o escuela</li>
+                <li><strong>MAN (Metropolitan Area Network):</strong> Red metropolitana que cubre una ciudad o área metropolitana</li>
+                <li><strong>WAN (Wide Area Network):</strong> Red de área amplia que conecta redes locales a través de grandes distancias (ej: internet)</li>
+            </ul>
+
+            <h3>Por Topología</h3>
+            <ul>
+                <li><strong>Bus:</strong> Todos los dispositivos se conectan a un cable principal</li>
+                <li><strong>Estrella:</strong> Todos los dispositivos se conectan a un punto central (hub o switch)</li>
+                <li><strong>Anillo:</strong> Los dispositivos forman un círculo donde cada uno se conecta con el siguiente</li>
+                <li><strong>Malla:</strong> Cada dispositivo se conecta con todos los demás</li>
+            </ul>
+        </section>
+
+        <section id="topologias-redes">
+            <h2>Topologías de Red</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Topología</th>
+                        <th>Ventajas</th>
+                        <th>Desventajas</th>
+                        <th>Uso Típico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bus</td>
+                        <td>Fácil de implementar, económico</td>
+                        <td>Si falla el cable principal, toda la red se cae</td>
+                        <td>Redes pequeñas, Ethernet antiguo</td>
+                    </tr>
+                    <tr>
+                        <td>Estrella</td>
+                        <td>Fácil de administrar, fallos aislados</td>
+                        <td>Dependiente del dispositivo central</td>
+                        <td>Redes domésticas y de oficina</td>
+                    </tr>
+                    <tr>
+                        <td>Anillo</td>
+                        <td>Eficiente en el uso del cable</td>
+                        <td>Si falla un nodo, puede afectar toda la red</td>
+                        <td>Redes token ring, FDDI</td>
+                    </tr>
+                    <tr>
+                        <td>Malla</td>
+                        <td>Muy confiable, múltiples rutas</td>
+                        <td>Costosa, compleja de implementar</td>
+                        <td>Redes críticas, internet backbone</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="modelos-red">
+            <h2>Modelos de Red</h2>
+            
+            <h3>Modelo OSI (Open Systems Interconnection)</h3>
+            <p>El modelo OSI es un estándar que describe cómo se comunican los sistemas de red. Está dividido en 7 capas, cada una con responsabilidades específicas:</p>
+            <ol>
+                <li><strong>Capa 1 - Física:</strong> Transmisión de bits a través del medio físico</li>
+                <li><strong>Capa 2 - Enlace de Datos:</strong> Control de acceso al medio y detección de errores</li>
+                <li><strong>Capa 3 - Red:</strong> Enrutamiento y direccionamiento lógico</li>
+                <li><strong>Capa 4 - Transporte:</strong> Control de flujo y confiabilidad de la comunicación</li>
+                <li><strong>Capa 5 - Sesión:</strong> Gestión de sesiones entre aplicaciones</li>
+                <li><strong>Capa 6 - Presentación:</strong> Formato y codificación de datos</li>
+                <li><strong>Capa 7 - Aplicación:</strong> Servicios de red para aplicaciones</li>
+            </ol>
+
+            <h3>Modelo TCP/IP</h3>
+            <p>El modelo TCP/IP es más simple y práctico, usado en internet. Tiene 4 capas:</p>
+            <ol>
+                <li><strong>Capa de Acceso a Red:</strong> Equivale a las capas 1 y 2 del OSI</li>
+                <li><strong>Capa de Internet:</strong> Equivale a la capa 3 del OSI</li>
+                <li><strong>Capa de Transporte:</strong> Equivale a la capa 4 del OSI</li>
+                <li><strong>Capa de Aplicación:</strong> Equivale a las capas 5, 6 y 7 del OSI</li>
+            </ol>
+        </section>
+
+        <section id="caso-practico">
+            <h2>Caso Práctico: Mensaje de Higueras a Zarautz (España)</h2>
+            <p>Imagina que desde nuestra escuela en Higueras, Córdoba, Argentina, enviamos un mensaje a un amigo que vive en Zarautz, España. ¿Cómo viaja ese mensaje a través de internet?</p>
+            
+            <p>El mensaje recorre un camino fascinante a través de las 7 capas del modelo OSI:</p>
+            <ol>
+                <li><strong>Física:</strong> Nuestro mensaje se convierte en señales eléctricas que viajan por cables de fibra óptica</li>
+                <li><strong>Enlace:</strong> Los datos se organizan en tramas con direcciones MAC</li>
+                <li><strong>Red:</strong> Se agregan direcciones IP y se determina la ruta óptima</li>
+                <li><strong>Transporte:</strong> Se garantiza que el mensaje llegue completo y en orden</li>
+                <li><strong>Sesión:</strong> Se mantiene la conexión activa durante la transmisión</li>
+                <li><strong>Presentación:</strong> Se asegura que el formato sea compatible</li>
+                <li><strong>Aplicación:</strong> El mensaje se entrega a la aplicación correcta</li>
+            </ol>
+        </section>
+
+        <section id="video-conclusion">
+            <h2>Video: Conclusión del Grupo</h2>
+            <p>En este video, los integrantes de nuestro grupo explican con sus propias palabras cómo viaja un mensaje desde Higueras hasta Zarautz, España, basándose en el modelo OSI y TCP/IP:</p>
+            
+            <video width="640" height="360" controls>
+                <source src="videos/conclusion-redes.mp4" type="video/mp4">
+                <source src="videos/conclusion-redes.webm" type="video/webm">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            
+            <p><strong>Descripción del video:</strong> Los estudiantes explican el viaje de un mensaje a través de las capas del modelo OSI, desde la conversión a señales físicas hasta la entrega final en la aplicación del destinatario en España.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="index.html">Volver al Inicio</a></p>
+    </footer>
+</body>
+</html> 

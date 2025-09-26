@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 1 - Física - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 1 - Física</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa Física?</h2>
+            <p>La Capa Física es la primera y más básica del modelo OSI. Su función principal es transmitir bits (0s y 1s) a través del medio físico de comunicación. Esta capa se encarga de la representación física de los datos, las especificaciones mecánicas y eléctricas de la interfaz, y la transmisión de señales a través del medio.</p>
+            
+            <p>En términos simples, la Capa Física convierte los datos digitales en señales físicas (eléctricas, ópticas o electromagnéticas) que pueden viajar por cables, ondas de radio, o fibra óptica.</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa Física</h2>
+            
+            <h3>Ethernet</h3>
+            <p><strong>Descripción:</strong> Es el estándar más común para redes locales (LAN). Define cómo se transmiten los datos a través de cables de cobre o fibra óptica.</p>
+            <p><strong>Función:</strong> Establece las especificaciones para cables, conectores, voltajes y velocidades de transmisión.</p>
+            
+            <h3>WiFi (IEEE 802.11)</h3>
+            <p><strong>Descripción:</strong> Estándar para redes inalámbricas que permite la comunicación sin cables.</p>
+            <p><strong>Función:</strong> Define las frecuencias de radio, modulación de señales y protocolos de acceso al medio.</p>
+            
+            <h3>Bluetooth</h3>
+            <p><strong>Descripción:</strong> Tecnología de comunicación de corto alcance entre dispositivos.</p>
+            <p><strong>Función:</strong> Establece las especificaciones para transmisión de datos a través de ondas de radio de baja potencia.</p>
+            
+            <h3>Fibra Óptica</h3>
+            <p><strong>Descripción:</strong> Medio de transmisión que utiliza pulsos de luz para transmitir datos.</p>
+            <p><strong>Función:</strong> Define cómo se codifican los datos en pulsos de luz y cómo se transmiten a través de fibras de vidrio.</p>
+            
+            <h3>USB (Universal Serial Bus)</h3>
+            <p><strong>Descripción:</strong> Estándar para conectar dispositivos periféricos a computadoras.</p>
+            <p><strong>Función:</strong> Define las especificaciones eléctricas y mecánicas para la conexión y transmisión de datos.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa Física:</p>
+            
+            <h3>1. Simulación de Transmisión de Bits</h3>
+            <p>Esta prueba te permite ver cómo se convierten los datos en señales físicas:</p>
+            <ul>
+                <li>Ingresa un mensaje de texto</li>
+                <li>Observa la conversión a código binario (0s y 1s)</li>
+                <li>Simula la transmisión a través de diferentes medios físicos</li>
+                <li>Identifica posibles errores de transmisión</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> Ethernet, WiFi</p>
+            <p><strong>Conceptos de red:</strong> Codificación de datos, transmisión serial, detección de errores</p>
+            
+            <h3>2. Análisis de Medios de Transmisión</h3>
+            <p>Compara diferentes medios físicos de transmisión:</p>
+            <ul>
+                <li>Cable de cobre (par trenzado)</li>
+                <li>Fibra óptica</li>
+                <li>Transmisión inalámbrica</li>
+                <li>Análisis de velocidades y distancias</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> Ethernet, WiFi, Fibra Óptica</p>
+            <p><strong>Conceptos de red:</strong> Atenuación de señal, interferencia, ancho de banda</p>
+            
+            <h3>3. Simulación de Conectores y Cables</h3>
+            <p>Aprende sobre diferentes tipos de conectores:</p>
+            <ul>
+                <li>Conectores RJ45 para Ethernet</li>
+                <li>Conectores de fibra óptica</li>
+                <li>Conectores USB</li>
+                <li>Configuración de pines y cables</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> Ethernet, USB</p>
+            <p><strong>Conceptos de red:</strong> Estándares de cableado, categorías de cables, compatibilidad</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Transmisión de un Mensaje</h2>
+            <p>Imagina que envías el mensaje "Hola" desde Higueras a Zarautz:</p>
+            <ol>
+                <li><strong>Entrada:</strong> El mensaje "Hola" se convierte en código ASCII</li>
+                <li><strong>Binario:</strong> H=72=01001000, o=111=01101111, l=108=01101100, a=97=01100001</li>
+                <li><strong>Señal:</strong> Los 0s y 1s se convierten en señales eléctricas u ópticas</li>
+                <li><strong>Transmisión:</strong> Las señales viajan por cables de fibra óptica</li>
+                <li><strong>Recepción:</strong> En España, las señales se reconvierten en bits</li>
+                <li><strong>Decodificación:</strong> Los bits se convierten de vuelta en el mensaje "Hola"</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="index.html">Volver al Inicio</a> | <a href="enlace.html">Siguiente: Capa 2 - Enlace</a></p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 2 - Enlace de Datos - Modelo OSI</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-hdd-network"></i> Redes de Computadoras
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Capas OSI
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/capa1">Capa 1 - Física</a></li>
+                            <li><a class="dropdown-item active" href="/capa2">Capa 2 - Enlace de Datos</a></li>
+                            <li><a class="dropdown-item" href="/capa3">Capa 3 - Red</a></li>
+                            <li><a class="dropdown-item" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa5">Capa 5 - Sesión</a></li>
+                            <li><a class="dropdown-item" href="/capa6">Capa 6 - Presentación</a></li>
+                            <li><a class="dropdown-item" href="/capa7">Capa 7 - Aplicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Capa 2 - Enlace de Datos</h1>
+                    <p class="lead">Control de Errores y Acceso al Medio</p>
+                    <p class="mb-4">
+                        La capa de enlace de datos se encarga de la transmisión confiable de tramas 
+                        entre nodos adyacentes y el control de acceso al medio físico.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white bg-opacity-10 p-4 rounded">
+                        <i class="bi bi-diagram-2 display-1 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/protocolos">Protocolos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Capa 2 - Enlace de Datos</li>
+            </ol>
+        </nav>
+
+        <!-- Introducción a la Capa de Enlace -->
+        <section class="content-section fade-in">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-question-circle"></i> ¿Qué es la Capa de Enlace de Datos?</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                La Capa 2 del modelo OSI se encarga de la transmisión confiable de datos 
+                                entre dispositivos que están directamente conectados en la misma red.
+                            </p>
+                            
+                            <div class="alert alert-info">
+                                <i class="bi bi-info-circle"></i>
+                                <strong>Función Principal:</strong> Organizar los bits de la capa física 
+                                en tramas y garantizar la transmisión libre de errores.
+                            </div>
+                            
+                            <h4 class="text-primary mt-4 mb-3">Responsabilidades de la Capa de Enlace</h4>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-check-circle"></i> Control de errores</h6>
+                                            <small>Detección y corrección de errores de transmisión</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-arrow-left-right"></i> Control de flujo</h6>
+                                            <small>Regulación de la velocidad de transmisión</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-gear"></i> Acceso al medio</h6>
+                                            <small>Control de acceso al medio compartido</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-hash"></i> Direccionamiento</h6>
+                                            <small>Direcciones MAC para identificación</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-box"></i> Encapsulación</h6>
+                                            <small>Organización de datos en tramas</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-shield-check"></i> Sincronización</h6>
+                                            <small>Sincronización de tramas</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subcapas -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-layers"></i> Subcapas de la Capa de Enlace</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h5 class="mb-0"><i class="bi bi-gear"></i> LLC (Logical Link Control)</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Subcapa superior que proporciona servicios a la capa de red:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Control de flujo</li>
+                                                <li class="list-group-item">Control de errores</li>
+                                                <li class="list-group-item">Multiplexación</li>
+                                                <li class="list-group-item">Identificación de protocolos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h5 class="mb-0"><i class="bi bi-wifi"></i> MAC (Media Access Control)</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Subcapa inferior que controla el acceso al medio físico:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Direccionamiento MAC</li>
+                                                <li class="list-group-item">Control de acceso al medio</li>
+                                                <li class="list-group-item">Detección de colisiones</li>
+                                                <li class="list-group-item">Formato de tramas</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Protocolos -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-list-check"></i> Protocolos de la Capa 2</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-ethernet"></i> Ethernet</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Protocolo más común para redes LAN:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">IEEE 802.3</li>
+                                                <li class="list-group-item">Direcciones MAC de 48 bits</li>
+                                                <li class="list-group-item">CSMA/CD (detección de colisiones)</li>
+                                                <li class="list-group-item">Velocidades: 10/100/1000 Mbps</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-wifi"></i> WiFi (802.11)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Protocolo para redes inalámbricas:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">IEEE 802.11</li>
+                                                <li class="list-group-item">CSMA/CA (evasión de colisiones)</li>
+                                                <li class="list-group-item">Frecuencias: 2.4 GHz y 5 GHz</li>
+                                                <li class="list-group-item">Estándares: a/b/g/n/ac/ax</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-arrow-left-right"></i> PPP</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Point-to-Point Protocol:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Conexiones punto a punto</li>
+                                                <li class="list-group-item">Autenticación PAP/CHAP</li>
+                                                <li class="list-group-item">Compresión de datos</li>
+                                                <li class="list-group-item">Cifrado opcional</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-bluetooth"></i> Bluetooth</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Protocolo para redes personales:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">IEEE 802.15.1</li>
+                                                <li class="list-group-item">Frecuencia: 2.4 GHz</li>
+                                                <li class="list-group-item">Alcance corto (10m)</li>
+                                                <li class="list-group-item">Baja potencia</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control de Acceso al Medio -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-gear"></i> Control de Acceso al Medio</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">CSMA/CD (Ethernet)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><strong>Carrier Sense Multiple Access with Collision Detection</strong></p>
+                                            <ul>
+                                                <li>Escucha antes de transmitir</li>
+                                                <li>Detecta colisiones durante la transmisión</li>
+                                                <li>Detiene transmisión si hay colisión</li>
+                                                <li>Reintenta después de un tiempo aleatorio</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">CSMA/CA (WiFi)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><strong>Carrier Sense Multiple Access with Collision Avoidance</strong></p>
+                                            <ul>
+                                                <li>Escucha antes de transmitir</li>
+                                                <li>Envía señal RTS antes de datos</li>
+                                                <li>Espera confirmación CTS</li>
+                                                <li>Evita colisiones en lugar de detectarlas</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegación entre capas -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-arrow-left-right"></i> Navegación entre Capas</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <a href="/capa1" class="btn btn-outline-primary btn-lg w-100">
+                                        <i class="bi bi-arrow-down"></i> Capa 1 - Física
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="/capa3" class="btn btn-primary btn-lg w-100">
+                                        <i class="bi bi-arrow-up"></i> Capa 3 - Red
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="/protocolos" class="btn btn-outline-secondary btn-lg w-100">
+                                        <i class="bi bi-list-check"></i> Ver Todas las Capas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Redes de Computadoras</h5>
+                    <p>Aplicación web educativa desarrollada con Python, Flask y MySQL</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/redes">Redes</a></li>
+                        <li><a href="/protocolos">Protocolos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 - Aplicación Web de Redes de Computadoras</p>
+                    <p class="mb-0">Desarrollado con Python, Flask, Bootstrap y MySQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Activar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+</body>
+</html> 

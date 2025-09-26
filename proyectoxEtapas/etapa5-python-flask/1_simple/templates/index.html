@@ -1,0 +1,417 @@
+{% extends "base.html" %}
+
+{% block title %}Redes de Computadoras - Modelo OSI{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section bg-primary text-white py-5 rounded mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold">
+                    <i class="fas fa-network-wired me-3"></i>
+                    Redes de Computadoras
+                </h1>
+                <p class="lead">Explora el fascinante mundo de las comunicaciones digitales y el modelo OSI</p>
+                <p class="mb-4">Desde Las Higueras, Córdoba, Argentina hasta Génova, Italia: cómo los datos viajan por el mundo</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fas fa-globe-americas fa-6x opacity-75"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Introducción -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-primary mb-4">
+            <i class="fas fa-info-circle me-2"></i>
+            ¿Qué son las Redes de Computadoras?
+        </h2>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead">Una red de computadoras es un conjunto de dispositivos interconectados que comparten recursos e información.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-plane me-2"></i>
+                            Un Viaje Digital: Las Higueras → Génova
+                        </h5>
+                        <p class="card-text">
+                            Imagina que desde tu computadora en Las Higueras, Córdoba, Argentina, envías un mensaje a un celular en Génova, Italia. 
+                            Este simple acto involucra una compleja red de dispositivos y protocolos que trabajan en conjunto:
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-wifi me-2 text-primary"></i>Tu computadora se conecta a un router WiFi</li>
+                            <li><i class="fas fa-tower-broadcast me-2 text-primary"></i>El router se conecta a un proveedor de internet</li>
+                            <li><i class="fas fa-satellite me-2 text-primary"></i>Los datos viajan por cables submarinos y satélites</li>
+                            <li><i class="fas fa-mobile-alt me-2 text-primary"></i>Finalmente llegan al celular en Génova</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-route fa-4x text-primary mb-3"></i>
+                        <h5>Ruta de Datos</h5>
+                        <p class="small">Argentina → Brasil → Portugal → España → Francia → Italia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dispositivos de Red -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-primary mb-4">
+            <i class="fas fa-server me-2"></i>
+            Dispositivos de Red
+        </h2>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-laptop fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Computadoras</h5>
+                        <p class="card-text">Dispositivos finales que generan y consumen datos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-wifi fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Routers</h5>
+                        <p class="card-text">Dirigen el tráfico entre diferentes redes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-hub fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Switches</h5>
+                        <p class="card-text">Conectan dispositivos dentro de una misma red</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-satellite fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Módems</h5>
+                        <p class="card-text">Convierten señales digitales a analógicas y viceversa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Topologías de Red -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-primary mb-4">
+            <i class="fas fa-project-diagram me-2"></i>
+            Topologías de Red
+        </h2>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-circle me-2"></i>
+                            Estrella
+                        </h5>
+                        <p class="card-text">Todos los dispositivos se conectan a un punto central (hub o switch)</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Fácil de mantener</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Un fallo no afecta toda la red</li>
+                            <li><i class="fas fa-times text-danger me-2"></i>Dependiente del punto central</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-circle-notch me-2"></i>
+                            Anillo
+                        </h5>
+                        <p class="card-text">Los dispositivos se conectan en forma de círculo</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Eficiente en el uso del cable</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Buena para redes pequeñas</li>
+                            <li><i class="fas fa-times text-danger me-2"></i>Un fallo puede romper toda la red</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-sitemap me-2"></i>
+                            Malla
+                        </h5>
+                        <p class="card-text">Cada dispositivo se conecta con todos los demás</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Máxima redundancia</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Muy confiable</li>
+                            <li><i class="fas fa-times text-danger me-2"></i>Costosa y compleja</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tipos de Red -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-primary mb-4">
+            <i class="fas fa-network-wired me-2"></i>
+            Tipos de Red
+        </h2>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-home me-2"></i>
+                            LAN (Local Area Network)
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Red de área local que conecta dispositivos en un área geográfica limitada.</p>
+                        <ul>
+                            <li>Oficinas y hogares</li>
+                            <li>Alta velocidad de transmisión</li>
+                            <li>Control total sobre la red</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card border-success">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-globe me-2"></i>
+                            WAN (Wide Area Network)
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Red de área amplia que conecta redes LAN a través de grandes distancias.</p>
+                        <ul>
+                            <li>Internet es la WAN más grande</li>
+                            <li>Menor velocidad que LAN</li>
+                            <li>Requiere proveedores de servicios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">
+                            <i class="fas fa-city me-2"></i>
+                            MAN (Metropolitan Area Network)
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Red de área metropolitana que cubre una ciudad o región.</p>
+                        <ul>
+                            <li>Conecta múltiples LAN</li>
+                            <li>Velocidad intermedia</li>
+                            <li>Usada por empresas y gobiernos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-wifi me-2"></i>
+                            PAN (Personal Area Network)
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Red personal que conecta dispositivos cercanos a una persona.</p>
+                        <ul>
+                            <li>Bluetooth y WiFi Direct</li>
+                            <li>Alcance limitado (10 metros)</li>
+                            <li>Dispositivos personales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modelos de Red -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-primary mb-4">
+            <i class="fas fa-layer-group me-2"></i>
+            Modelos de Red
+        </h2>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-sitemap me-2"></i>
+                            Modelo TCP/IP
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Modelo de 4 capas desarrollado por el Departamento de Defensa de EE.UU.</p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Capa de Aplicación</li>
+                            <li class="list-group-item">Capa de Transporte</li>
+                            <li class="list-group-item">Capa de Internet</li>
+                            <li class="list-group-item">Capa de Acceso a Red</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-layer-group me-2"></i>
+                            Modelo OSI
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Modelo de 7 capas desarrollado por ISO para estandarizar las comunicaciones.</p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Capa Física</li>
+                            <li class="list-group-item">Capa de Enlace de Datos</li>
+                            <li class="list-group-item">Capa de Red</li>
+                            <li class="list-group-item">Capa de Transporte</li>
+                            <li class="list-group-item">Capa de Sesión</li>
+                            <li class="list-group-item">Capa de Presentación</li>
+                            <li class="list-group-item">Capa de Aplicación</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Historia de las Redes -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-primary mb-4">
+            <i class="fas fa-history me-2"></i>
+            Historia de las Redes de Computadoras
+        </h2>
+        
+        <div class="timeline">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card border-left-primary">
+                        <div class="card-body">
+                            <h5 class="card-title">1960s - ARPANET</h5>
+                            <p class="card-text">Primera red de computadoras creada por el Departamento de Defensa de EE.UU.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card border-left-success">
+                        <div class="card-body">
+                            <h5 class="card-title">1970s - TCP/IP</h5>
+                            <p class="card-text">Desarrollo de los protocolos TCP/IP que aún se usan hoy en día.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card border-left-warning">
+                        <div class="card-body">
+                            <h5 class="card-title">1980s - Modelo OSI</h5>
+                            <p class="card-text">ISO desarrolla el modelo OSI para estandarizar las comunicaciones.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card border-left-info">
+                        <div class="card-body">
+                            <h5 class="card-title">1990s - World Wide Web</h5>
+                            <p class="card-text">Tim Berners-Lee crea la World Wide Web, revolucionando Internet.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card border-left-danger">
+                        <div class="card-body">
+                            <h5 class="card-title">2000s - Redes Sociales</h5>
+                            <p class="card-text">Aparición de las redes sociales y la Web 2.0.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card border-left-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">2010s - IoT y 5G</h5>
+                            <p class="card-text">Internet de las Cosas y redes 5G transforman la conectividad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="mb-5">
+    <div class="container">
+        <div class="card bg-gradient-primary text-white">
+            <div class="card-body text-center py-5">
+                <h3 class="mb-3">
+                    <i class="fas fa-rocket me-2"></i>
+                    ¡Explora las Capas del Modelo OSI!
+                </h3>
+                <p class="lead mb-4">Descubre cómo cada capa contribuye a que tu mensaje llegue desde Argentina hasta Italia</p>
+                <a href="{{ url_for('protocolos') }}" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-list me-2"></i>
+                    Ver Protocolos
+                </a>
+                <a href="{{ url_for('capa7') }}" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-layer-group me-2"></i>
+                    Explorar Capas
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
