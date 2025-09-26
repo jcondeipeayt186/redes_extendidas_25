@@ -1,11 +1,18 @@
+{# Heredamos de la plantilla base para reutilizar estructura y estilos #}
 {% extends "base.html" %}
 
+{# Definimos el título de la página #}
 {% block title %}Protocolos{% endblock %}
 
+{# Bloque principal de contenido #}
 {% block content %}
 <h2>Protocolos</h2>
 
 <section>
+    {#
+      Si existe edit_item, el formulario funciona como "Modificar".
+      Caso contrario, funciona como "Agregar".
+    #}
     <h3>{% if edit_item %}Modificar protocolo{% else %}Agregar protocolo{% endif %}</h3>
     <form method="post" action="{% if edit_item %}{{ url_for('modificar_protocolo', pid=edit_item.id) }}{% else %}{{ url_for('protocolos_view') }}{% endif %}">
         <label for="nombre">Nombre:</label>
@@ -50,10 +57,12 @@
         <tbody>
             {% for p in protocolos %}
             <tr>
+                {# Acceso a atributos del dict con la sintaxis p.id (Jinja permite ambas) #}
                 <td>{{ p.id }}</td>
                 <td>{{ p.nombre }}</td>
                 <td>{{ p.capa }}</td>
                 <td>
+                    {# Enlace que recarga la página con ?edit=<id> para precargar el formulario #}
                     <a href="{{ url_for('protocolos_view', edit=p.id) }}">Editar</a> |
                     <a href="{{ url_for('eliminar_protocolo', pid=p.id) }}" onclick="return confirm('¿Estás seguro de eliminar este protocolo?');">Eliminar</a>
                 </td>

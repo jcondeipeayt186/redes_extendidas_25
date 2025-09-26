@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bloque Jinja2: las plantillas hijas pueden sobrescribir el título de la página (title). -->
     <title>{% block title %}Mi App Flask{% endblock %}</title>
 </head>
 <body>
@@ -16,6 +17,7 @@
     </header>
 
     <main>
+        <!-- Bloque principal donde cada plantilla hija inserta su contenido específico (content). -->
         {% block content %}{% endblock %}
     </main>
 
