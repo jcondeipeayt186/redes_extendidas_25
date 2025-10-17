@@ -125,7 +125,12 @@ def redes():
 
 @app.route("/prueba")
 def prueba():
-    return "Probando Flask"    
+    return "Probando Flask"  
+
+@app.route("/otroindex")
+def otro():
+    return render_template("index.html") 
+
 # =====================================================================
 # Punto de entrada de la aplicación
 # ---------------------------------------------------------------------
