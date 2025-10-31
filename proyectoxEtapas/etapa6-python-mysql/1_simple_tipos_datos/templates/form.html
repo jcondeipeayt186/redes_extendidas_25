@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario ejemplo_tipos</title>
+</head>
+<body>
+    <h2>Agregar registro</h2>
+    <form action="/agregar" method="post">
+        Edad: <input type="number" name="edad"><br>
+        Año: <input type="number" name="anio"><br>
+        Población: <input type="number" name="poblacion"><br>
+        DNI: <input type="number" name="dni"><br>
+        Teléfono: <input type="number" name="telefono"><br>
+        Precio: <input type="text" name="precio"><br>
+        Temperatura: <input type="text" name="temperatura"><br>
+        Altura: <input type="text" name="altura"><br>
+        Código: <input type="text" name="codigo" maxlength="5"><br>
+        Nombre: <input type="text" name="nombre"><br>
+        Comentario: <input type="text" name="comentario"><br>
+        Descripción: <textarea name="descripcion"></textarea><br>
+        Artículo: <textarea name="articulo"></textarea><br>
+        Documento: <textarea name="documento"></textarea><br>
+        Fecha de nacimiento: <input type="date" name="fecha_nac"><br>
+        Hora: <input type="time" name="hora"><br>
+        Año: <input type="number" name="anio_solo"><br>
+        Activo: 
+        <select name="activo">
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+        </select><br>
+        Sexo: 
+        <select name="sexo">
+            <option value="M">M</option>
+            <option value="F">F</option>
+            <option value="X">X</option>
+        </select><br>
+        Días laborales:<br>
+        <input type="checkbox" name="dias_laborales" value="Lunes"> Lunes
+        <input type="checkbox" name="dias_laborales" value="Martes"> Martes
+        <input type="checkbox" name="dias_laborales" value="Miercoles"> Miércoles
+        <input type="checkbox" name="dias_laborales" value="Jueves"> Jueves
+        <input type="checkbox" name="dias_laborales" value="Viernes"> Viernes<br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar registro</title>
+</head>
+<body>
+    <h2>Editar registro #{{ r.id }}</h2>
+    <form action="/actualizar/{{ r.id }}" method="post">
+        Nombre: <input type="text" name="nombre" value="{{ r.nombre or '' }}"><br>
+        Edad: <input type="number" name="edad" value="{{ r.edad or '' }}"><br>
+        DNI: <input type="number" name="dni" value="{{ r.dni or '' }}"><br>
+        Teléfono: <input type="number" name="telefono" value="{{ r.telefono or '' }}"><br>
+        Sexo:
+        <select name="sexo">
+            <option value="M" {% if r.sexo=='M' %}selected{% endif %}>M</option>
+            <option value="F" {% if r.sexo=='F' %}selected{% endif %}>F</option>
+            <option value="X" {% if r.sexo=='X' %}selected{% endif %}>X</option>
+        </select><br>
+        Activo:
+        <select name="activo">
+            <option value="1" {% if r.activo %}selected{% endif %}>Sí</option>
+            <option value="0" {% if not r.activo %}selected{% endif %}>No</option>
+        </select><br>
+        Días laborales:<br>
+        <input type="checkbox" name="dias_laborales" value="Lunes" {% if 'Lunes' in dias_list %}checked{% endif %}> Lunes
+        <input type="checkbox" name="dias_laborales" value="Martes" {% if 'Martes' in dias_list %}checked{% endif %}> Martes
+        <input type="checkbox" name="dias_laborales" value="Miercoles" {% if 'Miercoles' in dias_list %}checked{% endif %}> Miércoles
+        <input type="checkbox" name="dias_laborales" value="Jueves" {% if 'Jueves' in dias_list %}checked{% endif %}> Jueves
+        <input type="checkbox" name="dias_laborales" value="Viernes" {% if 'Viernes' in dias_list %}checked{% endif %}> Viernes
+        <br><br>
+        <button type="submit">Actualizar</button>
+        <a href="/">Volver</a>
+    </form>
+</body>
+</html>
+
+

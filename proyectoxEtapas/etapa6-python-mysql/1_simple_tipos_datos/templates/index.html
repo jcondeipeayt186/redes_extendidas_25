@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registros</title>
+</head>
+<body>
+    <h2>Lista de registros</h2>
+    <a href="/form">Agregar nuevo registro</a>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th><th>Nombre</th><th>Edad</th><th>DNI</th><th>Teléfono</th>
+            <th>Sexo</th><th>Activo</th><th>Días laborales</th><th>Acciones</th>
+        </tr>
+        {% for r in registros %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.nombre }}</td>
+            <td>{{ r.edad }}</td>
+            <td>{{ r.dni }}</td>
+            <td>{{ r.telefono }}</td>
+            <td>{{ r.sexo }}</td>
+            <td>{{ "Sí" if r.activo else "No" }}</td>
+            <td>{{ r.dias_laborales }}</td>
+            <td>
+                <a href="/editar/{{ r.id }}">Editar</a>
+                <form action="/eliminar/{{ r.id }}" method="post" style="display:inline" onsubmit="return confirm('¿Eliminar registro {{ r.id }}?');">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
