@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes de Computadoras - Aplicación Web</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-hdd-network"></i> Redes de Computadoras
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Capas OSI
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/capa1">Capa 1 - Física</a></li>
+                            <li><a class="dropdown-item" href="/capa2">Capa 2 - Enlace de Datos</a></li>
+                            <li><a class="dropdown-item" href="/capa3">Capa 3 - Red</a></li>
+                            <li><a class="dropdown-item" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa5">Capa 5 - Sesión</a></li>
+                            <li><a class="dropdown-item" href="/capa6">Capa 6 - Presentación</a></li>
+                            <li><a class="dropdown-item" href="/capa7">Capa 7 - Aplicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Redes de Computadoras</h1>
+                    <p class="lead">Aplicación Web Educativa</p>
+                    <p class="mb-4">
+                        Descubre el fascinante mundo de las redes de computadoras a través de esta plataforma 
+                        educativa interactiva. Aprende sobre protocolos, dispositivos, topologías y mucho más.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="/redes" class="btn btn-light btn-lg btn-custom">
+                            <i class="bi bi-hdd-network"></i> Explorar Redes
+                        </a>
+                        <a href="/protocolos" class="btn btn-outline-light btn-lg btn-custom">
+                            <i class="bi bi-list-check"></i> Ver Protocolos
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white bg-opacity-10 p-4 rounded">
+                        <i class="bi bi-hdd-network display-1 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <!-- Sección de bienvenida -->
+        <section class="content-section fade-in">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Bienvenido a nuestra aplicación web sobre redes de computadoras</h2>
+                    <p class="lead mb-5">
+                        Esta es una aplicación web educativa diseñada para explicar los conceptos fundamentales 
+                        de las redes de computadoras. A través de esta plataforma, podrás aprender sobre:
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-hdd-network display-4 text-primary mb-3"></i>
+                            <h5 class="card-title">Conceptos Básicos</h5>
+                            <p class="card-text">Fundamentos de redes de computadoras y comunicación digital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-router display-4 text-success mb-3"></i>
+                            <h5 class="card-title">Dispositivos</h5>
+                            <p class="card-text">Routers, switches, hubs y otros componentes de red</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-diagram-3 display-4 text-info mb-3"></i>
+                            <h5 class="card-title">Topologías</h5>
+                            <p class="card-text">Estrella, bus, anillo y otras configuraciones de red</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-layers display-4 text-warning mb-3"></i>
+                            <h5 class="card-title">Modelos OSI</h5>
+                            <p class="card-text">TCP/IP y modelo OSI con sus 7 capas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de tecnologías -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h3 class="text-center mb-5">Stack de Tecnologías Utilizadas</h3>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0"><i class="bi bi-server"></i> Backend</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <strong>Python 3.x:</strong> Lenguaje de programación principal
+                                        </li>
+                                        <li class="list-group-item">
+                                            <strong>Flask 3.0.0:</strong> Framework web ligero y flexible
+                                        </li>
+                                        <li class="list-group-item">
+                                            <strong>MySQL:</strong> Sistema de gestión de bases de datos
+                                        </li>
+                                        <li class="list-group-item">
+                                            <strong>mysql-connector-python:</strong> Conector oficial de MySQL
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0"><i class="bi bi-window"></i> Frontend</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <strong>HTML5:</strong> Estructura del contenido web
+                                        </li>
+                                        <li class="list-group-item">
+                                            <strong>Bootstrap 5.3.2:</strong> Framework CSS para diseño responsive
+                                        </li>
+                                        <li class="list-group-item">
+                                            <strong>CSS3:</strong> Estilos personalizados
+                                        </li>
+                                        <li class="list-group-item">
+                                            <strong>JavaScript:</strong> Interactividad (futuras funcionalidades)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de imagen representativa -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0"><i class="bi bi-image"></i> Redes de Computadoras</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                Las redes de computadoras son sistemas de comunicación que permiten la interconexión 
+                                de dispositivos informáticos para compartir recursos e información. Imagina el increíble 
+                                viaje que hace un mensaje desde una computadora en Las Higueras, Córdoba, Argentina, 
+                                hasta un celular en Génova, Italia.
+                            </p>
+                            
+                            <div class="text-center my-4">
+                                <img src="{{ url_for('static', filename='img/redes.png') }}" 
+                                     alt="Representación de redes de computadoras" 
+                                     class="img-fluid" 
+                                     style="max-width: 600px;">
+                                <p class="text-muted mt-2">
+                                    <small>Representación visual de una red de computadoras interconectada</small>
+                                </p>
+                            </div>
+                            
+                            <p>
+                                Este proceso involucra múltiples tecnologías, protocolos y dispositivos trabajando 
+                                en conjunto para garantizar la comunicación efectiva a través de miles de kilómetros.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de navegación rápida -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h3 class="text-center mb-5">Explora nuestro contenido</h3>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-hdd-network display-4 text-primary mb-3"></i>
+                                    <h4><a href="/redes" class="text-decoration-none">Redes de Computadoras</a></h4>
+                                    <p class="card-text">
+                                        Aprende sobre los fundamentos de las redes, desde conceptos básicos hasta 
+                                        modelos avanzados como TCP/IP y OSI. Descubre cómo funcionan las comunicaciones 
+                                        digitales y la evolución histórica de las redes.
+                                    </p>
+                                    <a href="/redes" class="btn btn-primary btn-custom">
+                                        Explorar Redes
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-list-check display-4 text-success mb-3"></i>
+                                    <h4><a href="/protocolos" class="text-decoration-none">Protocolos de Red</a></h4>
+                                    <p class="card-text">
+                                        Explora los protocolos que hacen posible la comunicación en las redes. 
+                                        Desde HTTP hasta TCP/IP, entiende cómo los protocolos organizan y 
+                                        facilitan la transmisión de datos.
+                                    </p>
+                                    <a href="/protocolos" class="btn btn-success btn-custom">
+                                        Ver Protocolos
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Redes de Computadoras</h5>
+                    <p>Aplicación web educativa desarrollada con Python, Flask y MySQL</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/redes">Redes</a></li>
+                        <li><a href="/protocolos">Protocolos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 - Aplicación Web de Redes de Computadoras</p>
+                    <p class="mb-0">Desarrollado con Python, Flask, Bootstrap y MySQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Activar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+        
+        // Animación de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

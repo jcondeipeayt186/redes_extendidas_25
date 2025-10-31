@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios - Redes de Computadoras</title>
+</head>
+<body>
+    <header>
+        <h1>Registro de Usuarios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>Registro y Acceso de Usuarios</h2>
+            <p>Esta página te permite registrarte como usuario visitante del sitio web educativo sobre redes de computadoras. Una vez registrado, podrás acceder a funcionalidades especiales y realizar pruebas prácticas relacionadas con cada capa del modelo OSI.</p>
+            
+            <p>Al registrarte, se creará un perfil personal donde se guardarán tus resultados de las pruebas, tu progreso de aprendizaje y tus preferencias de estudio. Esto te permitirá hacer un seguimiento de tu comprensión de los conceptos de redes.</p>
+        </section>
+
+        <section id="formulario-registro">
+            <h2>Formulario de Registro</h2>
+            <p>Completa el siguiente formulario para crear tu cuenta de usuario:</p>
+            
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Información Personal</legend>
+                    
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <br><br>
+                    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
+                    
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="13" max="100" required>
+                    <br><br>
+                    
+                    <label for="institucion">Institución educativa:</label>
+                    <input type="text" id="institucion" name="institucion" placeholder="Escuela, universidad, etc.">
+                    <br><br>
+                    
+                    <label for="nivel">Nivel de conocimiento en redes:</label>
+                    <select id="nivel" name="nivel" required>
+                        <option value="">Selecciona tu nivel</option>
+                        <option value="principiante">Principiante - Estoy aprendiendo</option>
+                        <option value="intermedio">Intermedio - Tengo conocimientos básicos</option>
+                        <option value="avanzado">Avanzado - Tengo experiencia en redes</option>
+                        <option value="experto">Experto - Trabajo en el campo de redes</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Información de la Cuenta</legend>
+                    
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    <br><br>
+                    
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br><br>
+                    
+                    <label for="confirmar_password">Confirmar contraseña:</label>
+                    <input type="password" id="confirmar_password" name="confirmar_password" required>
+                    <br><br>
+                    
+                    <label for="pregunta_seguridad">Pregunta de seguridad:</label>
+                    <select id="pregunta_seguridad" name="pregunta_seguridad" required>
+                        <option value="">Selecciona una pregunta</option>
+                        <option value="mascota">¿Cuál es el nombre de tu primera mascota?</option>
+                        <option value="ciudad">¿En qué ciudad naciste?</option>
+                        <option value="escuela">¿Cuál es el nombre de tu primera escuela?</option>
+                        <option value="color">¿Cuál es tu color favorito?</option>
+                        <option value="comida">¿Cuál es tu comida favorita?</option>
+                    </select>
+                    <br><br>
+                    
+                    <label for="respuesta_seguridad">Respuesta de seguridad:</label>
+                    <input type="text" id="respuesta_seguridad" name="respuesta_seguridad" required>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Preferencias de Estudio</legend>
+                    
+                    <p>¿Qué te interesa más aprender sobre redes?</p>
+                    <input type="checkbox" id="fisica" name="intereses[]" value="fisica">
+                    <label for="fisica">Capa Física - Medios de transmisión</label>
+                    <br>
+                    
+                    <input type="checkbox" id="enlace" name="intereses[]" value="enlace">
+                    <label for="enlace">Capa de Enlace - Control de acceso al medio</label>
+                    <br>
+                    
+                    <input type="checkbox" id="red" name="intereses[]" value="red">
+                    <label for="red">Capa de Red - Enrutamiento y direccionamiento</label>
+                    <br>
+                    
+                    <input type="checkbox" id="transporte" name="intereses[]" value="transporte">
+                    <label for="transporte">Capa de Transporte - Control de flujo y confiabilidad</label>
+                    <br>
+                    
+                    <input type="checkbox" id="sesion" name="intereses[]" value="sesion">
+                    <label for="sesion">Capa de Sesión - Gestión de sesiones</label>
+                    <br>
+                    
+                    <input type="checkbox" id="presentacion" name="intereses[]" value="presentacion">
+                    <label for="presentacion">Capa de Presentación - Codificación y compresión</label>
+                    <br>
+                    
+                    <input type="checkbox" id="aplicacion" name="intereses[]" value="aplicacion">
+                    <label for="aplicacion">Capa de Aplicación - Protocolos de red</label>
+                    <br><br>
+                    
+                    <label for="tiempo_estudio">¿Cuánto tiempo planeas dedicar al estudio?</label>
+                    <select id="tiempo_estudio" name="tiempo_estudio">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1-2_horas">1-2 horas por semana</option>
+                        <option value="3-5_horas">3-5 horas por semana</option>
+                        <option value="6-10_horas">6-10 horas por semana</option>
+                        <option value="mas_de_10">Más de 10 horas por semana</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Términos y Condiciones</legend>
+                    
+                    <input type="checkbox" id="aceptar_terminos" name="aceptar_terminos" required>
+                    <label for="aceptar_terminos">Acepto los términos y condiciones del sitio</label>
+                    <br><br>
+                    
+                    <input type="checkbox" id="aceptar_privacidad" name="aceptar_privacidad" required>
+                    <label for="aceptar_privacidad">Acepto la política de privacidad y el uso de cookies</label>
+                    <br><br>
+                    
+                    <input type="checkbox" id="aceptar_comunicaciones" name="aceptar_comunicaciones">
+                    <label for="aceptar_comunicaciones">Acepto recibir comunicaciones sobre nuevos contenidos y funcionalidades</label>
+                </fieldset>
+                
+                <div>
+                    <button type="submit">Registrarme</button>
+                    <button type="reset">Limpiar formulario</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="inicio-sesion">
+            <h2>Iniciar Sesión</h2>
+            <p>Si ya tienes una cuenta, puedes iniciar sesión aquí:</p>
+            
+            <form action="#" method="post">
+                <label for="login_usuario">Nombre de usuario:</label>
+                <input type="text" id="login_usuario" name="login_usuario" required>
+                <br><br>
+                
+                <label for="login_password">Contraseña:</label>
+                <input type="password" id="login_password" name="login_password" required>
+                <br><br>
+                
+                <input type="checkbox" id="recordar" name="recordar">
+                <label for="recordar">Recordar mi sesión</label>
+                <br><br>
+                
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            
+            <p><a href="#recuperar_password">¿Olvidaste tu contraseña?</a></p>
+        </section>
+
+        <section id="funcionalidades-usuario">
+            <h2>Funcionalidades para Usuarios Registrados</h2>
+            <p>Una vez que te registres e inicies sesión, tendrás acceso a las siguientes funcionalidades:</p>
+            
+            <h3>Pruebas Prácticas por Capa</h3>
+            <ul>
+                <li><strong>Capa 1 - Física:</strong> Simulación de transmisión de bits, análisis de medios de transmisión</li>
+                <li><strong>Capa 2 - Enlace:</strong> Análisis de tramas Ethernet, simulación de control de acceso al medio</li>
+                <li><strong>Capa 3 - Red:</strong> Análisis de direcciones IP, simulación de enrutamiento</li>
+                <li><strong>Capa 4 - Transporte:</strong> Comparación TCP vs UDP, análisis de puertos y conexiones</li>
+                <li><strong>Capa 5 - Sesión:</strong> Gestión de sesiones, sincronización de datos</li>
+                <li><strong>Capa 6 - Presentación:</strong> Compresión de datos, conversión de formatos</li>
+                <li><strong>Capa 7 - Aplicación:</strong> Simulación de protocolos HTTP, FTP, correo electrónico</li>
+            </ul>
+            
+            <h3>Seguimiento del Progreso</h3>
+            <ul>
+                <li>Historial de pruebas realizadas</li>
+                <li>Puntuaciones y resultados</li>
+                <li>Progreso por capa del modelo OSI</li>
+                <li>Certificados de completitud</li>
+            </ul>
+            
+            <h3>Recursos Personalizados</h3>
+            <ul>
+                <li>Contenido adaptado a tu nivel de conocimiento</li>
+                <li>Recomendaciones de estudio basadas en tu progreso</li>
+                <li>Acceso a material adicional y ejercicios</li>
+                <li>Foro de discusión con otros estudiantes</li>
+            </ul>
+        </section>
+
+        <section id="recuperar_password">
+            <h2>Recuperar Contraseña</h2>
+            <p>Si olvidaste tu contraseña, puedes recuperarla respondiendo tu pregunta de seguridad:</p>
+            
+            <form action="#" method="post">
+                <label for="recuperar_usuario">Nombre de usuario:</label>
+                <input type="text" id="recuperar_usuario" name="recuperar_usuario" required>
+                <br><br>
+                
+                <label for="recuperar_email">Correo electrónico:</label>
+                <input type="email" id="recuperar_email" name="recuperar_email" required>
+                <br><br>
+                
+                <button type="submit">Enviar instrucciones de recuperación</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="aplicacion.html">Anterior: Capa 7 - Aplicación</a> | <a href="index.html">Volver al Inicio</a></p>
+    </footer>
+</body>
+</html> 

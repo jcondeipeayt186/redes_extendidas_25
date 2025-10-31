@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 2 - Enlace de Datos - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 2 - Enlace de Datos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa de Enlace de Datos?</h2>
+            <p>La Capa de Enlace de Datos es la segunda capa del modelo OSI y se encarga de la transmisión confiable de datos entre nodos adyacentes en una red. Esta capa toma los bits de la capa física y los organiza en tramas (frames) que contienen información de control para la detección y corrección de errores.</p>
+            
+            <p>Sus funciones principales incluyen el control de acceso al medio físico, la detección de errores, el control de flujo, y la identificación de dispositivos mediante direcciones MAC (Media Access Control).</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa de Enlace</h2>
+            
+            <h3>Ethernet (IEEE 802.3)</h3>
+            <p><strong>Descripción:</strong> Es el estándar más utilizado para redes locales. Define cómo se organizan los datos en tramas y cómo se accede al medio compartido.</p>
+            <p><strong>Función:</strong> Controla el acceso múltiple al medio, detecta colisiones y organiza los datos en tramas con direcciones MAC.</p>
+            
+            <h3>WiFi (IEEE 802.11)</h3>
+            <p><strong>Descripción:</strong> Estándar para redes inalámbricas que incluye protocolos de enlace específicos para el medio inalámbrico.</p>
+            <p><strong>Función:</strong> Gestiona el acceso al medio inalámbrico, controla la calidad de la señal y maneja la autenticación.</p>
+            
+            <h3>PPP (Point-to-Point Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo de enlace punto a punto utilizado principalmente para conexiones de acceso a internet.</p>
+            <p><strong>Función:</strong> Establece conexiones directas entre dos nodos, autentica usuarios y negocia parámetros de conexión.</p>
+            
+            <h3>HDLC (High-Level Data Link Control)</h3>
+            <p><strong>Descripción:</strong> Protocolo de enlace de alto nivel utilizado en redes WAN y conexiones seriales.</p>
+            <p><strong>Función:</strong> Proporciona control de flujo, detección de errores y control de secuencia para transmisiones confiables.</p>
+            
+            <h3>ATM (Asynchronous Transfer Mode)</h3>
+            <p><strong>Descripción:</strong> Protocolo de enlace que transmite datos en celdas de tamaño fijo, utilizado en redes de alta velocidad.</p>
+            <p><strong>Función:</strong> Organiza los datos en celdas de 53 bytes, garantiza calidad de servicio y maneja diferentes tipos de tráfico.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa de Enlace:</p>
+            
+            <h3>1. Análisis de Tramas Ethernet</h3>
+            <p>Esta prueba te permite examinar la estructura de las tramas de red:</p>
+            <ul>
+                <li>Visualiza la estructura de una trama Ethernet</li>
+                <li>Identifica campos como dirección MAC origen y destino</li>
+                <li>Analiza el campo de datos y CRC</li>
+                <li>Simula la creación de tramas personalizadas</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> Ethernet (IEEE 802.3)</p>
+            <p><strong>Conceptos de red:</strong> Estructura de tramas, direcciones MAC, detección de errores</p>
+            
+            <h3>2. Simulación de Control de Acceso al Medio</h3>
+            <p>Experimenta con diferentes métodos de acceso al medio:</p>
+            <ul>
+                <li>CSMA/CD (Ethernet con cable)</li>
+                <li>CSMA/CA (WiFi inalámbrico)</li>
+                <li>Token Ring (paso de testigo)</li>
+                <li>Análisis de colisiones y resolución</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> Ethernet, WiFi, Token Ring</p>
+            <p><strong>Conceptos de red:</strong> Acceso múltiple, colisiones, backoff exponencial</p>
+            
+            <h3>3. Detección y Corrección de Errores</h3>
+            <p>Aprende sobre mecanismos de detección de errores:</p>
+            <ul>
+                <li>Cálculo de CRC (Cyclic Redundancy Check)</li>
+                <li>Verificación de paridad</li>
+                <li>Detección de errores de transmisión</li>
+                <li>Simulación de errores y su detección</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> Ethernet, HDLC, PPP</p>
+            <p><strong>Conceptos de red:</strong> Códigos de detección de errores, integridad de datos</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Transmisión de una Trama</h2>
+            <p>Cuando envías un mensaje desde Higueras a Zarautz, la Capa de Enlace:</p>
+            <ol>
+                <li><strong>Recibe datos:</strong> Los bits de la capa física se organizan en tramas</li>
+                <li><strong>Agrega encabezado:</strong> Se incluye dirección MAC origen (tu computadora) y destino (próximo router)</li>
+                <li><strong>Control de errores:</strong> Se calcula el CRC para detectar errores de transmisión</li>
+                <li><strong>Control de flujo:</strong> Se verifica que el receptor pueda procesar la trama</li>
+                <li><strong>Transmisión:</strong> La trama se envía al siguiente nodo de la red</li>
+                <li><strong>Verificación:</strong> El receptor verifica el CRC y confirma la recepción</li>
+            </ol>
+        </section>
+
+        <section id="direcciones-mac">
+            <h2>Direcciones MAC</h2>
+            <p>Las direcciones MAC son identificadores únicos de 48 bits (6 bytes) asignados a cada interfaz de red:</p>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Formato</th>
+                        <th>Ejemplo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XX:XX:XX:XX:XX:XX</td>
+                        <td>00:1B:44:11:3A:B7</td>
+                        <td>Formato hexadecimal con dos puntos</td>
+                    </tr>
+                    <tr>
+                        <td>XX-XX-XX-XX-XX-XX</td>
+                        <td>00-1B-44-11-3A-B7</td>
+                        <td>Formato hexadecimal con guiones</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>001B44113AB7</td>
+                        <td>Formato hexadecimal continuo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="fisica.html">Anterior: Capa 1 - Física</a> | <a href="red.html">Siguiente: Capa 3 - Red</a></p>
+    </footer>
+</body>
+</html> 

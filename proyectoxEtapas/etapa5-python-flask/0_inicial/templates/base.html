@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bloque Jinja2: las plantillas hijas pueden sobrescribir el título de la página (title). -->
+    <title>{% block title %}Mi App Flask{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Mi App Flask</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a> |
+            <a href="{{ url_for('protocolos_view') }}">Protocolos</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <!-- Bloque principal donde cada plantilla hija inserta su contenido específico (content). -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <small>&copy; 2025 - Proyecto Inicial Flask</small>
+    </footer>
+</body>
+</html>
+
+

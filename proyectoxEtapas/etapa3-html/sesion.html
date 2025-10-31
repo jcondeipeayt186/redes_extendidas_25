@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 5 - Sesión - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 5 - Sesión</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="aplicacion.html">Capa 7 - Aplicación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa de Sesión?</h2>
+            <p>La Capa de Sesión es la quinta capa del modelo OSI y se encarga de establecer, gestionar y terminar sesiones de comunicación entre aplicaciones. Esta capa permite que dos aplicaciones establezcan una conexión lógica y mantengan el estado de la comunicación durante el tiempo que sea necesario.</p>
+            
+            <p>Sus funciones principales incluyen el establecimiento de sesiones, la sincronización de datos, el control de diálogo, la recuperación de sesiones interrumpidas, y la gestión de tokens para controlar el acceso a recursos compartidos.</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa de Sesión</h2>
+            
+            <h3>NetBIOS (Network Basic Input/Output System)</h3>
+            <p><strong>Descripción:</strong> Protocolo desarrollado por IBM que permite a las aplicaciones comunicarse a través de una red local.</p>
+            <p><strong>Función:</strong> Proporciona servicios de sesión, transporte y nombres para aplicaciones de red en sistemas Windows.</p>
+            
+            <h3>RPC (Remote Procedure Call)</h3>
+            <p><strong>Descripción:</strong> Protocolo que permite a un programa ejecutar código en otra computadora a través de la red.</p>
+            <p><strong>Función:</strong> Establece sesiones para llamadas a procedimientos remotos, gestiona la comunicación cliente-servidor y mantiene el estado de las operaciones.</p>
+            
+            <h3>SQL*Net</h3>
+            <p><strong>Descripción:</strong> Protocolo de Oracle para establecer sesiones de base de datos a través de la red.</p>
+            <p><strong>Función:</strong> Gestiona conexiones de base de datos, autenticación de usuarios y mantenimiento de sesiones activas.</p>
+            
+            <h3>X.225 (ISO 8327)</h3>
+            <p><strong>Descripción:</strong> Estándar ISO para protocolos de sesión que define cómo establecer y gestionar sesiones de comunicación.</p>
+            <p><strong>Función:</strong> Proporciona servicios de sesión estandarizados, control de diálogo y sincronización de datos.</p>
+            
+            <h3>SSH (Secure Shell)</h3>
+            <p><strong>Descripción:</strong> Protocolo que proporciona acceso seguro a sistemas remotos y gestión de sesiones cifradas.</p>
+            <p><strong>Función:</strong> Establece sesiones seguras, autentica usuarios y mantiene conexiones cifradas para operaciones remotas.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa de Sesión:</p>
+            
+            <h3>1. Gestión de Sesiones de Usuario</h3>
+            <p>Esta prueba te permite experimentar con la gestión de sesiones:</p>
+            <ul>
+                <li>Simula el inicio de sesión de un usuario</li>
+                <li>Observa el establecimiento de la sesión</li>
+                <li>Gestiona múltiples sesiones simultáneas</li>
+                <li>Simula el cierre y la expiración de sesiones</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> NetBIOS, SSH, RPC</p>
+            <p><strong>Conceptos de red:</strong> Establecimiento de sesiones, autenticación, gestión de estado</p>
+            
+            <h3>2. Sincronización de Datos</h3>
+            <p>Experimenta con la sincronización entre aplicaciones:</p>
+            <ul>
+                <li>Simula la sincronización de archivos entre dispositivos</li>
+                <li>Observa el control de diálogo en comunicaciones bidireccionales</li>
+                <li>Analiza puntos de sincronización y recuperación</li>
+                <li>Experimenta con la resincronización después de interrupciones</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> RPC, X.225</p>
+            <p><strong>Conceptos de red:</strong> Sincronización, control de diálogo, puntos de control</p>
+            
+            <h3>3. Recuperación de Sesiones Interrumpidas</h3>
+            <p>Aprende sobre la robustez de las sesiones:</p>
+            <ul>
+                <li>Simula interrupciones de conexión</li>
+                <li>Observa el proceso de recuperación automática</li>
+                <li>Analiza diferentes estrategias de recuperación</li>
+                <li>Experimenta con la reanudación de sesiones</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> SSH, RPC, X.225</p>
+            <p><strong>Conceptos de red:</strong> Recuperación de sesiones, robustez, continuidad de servicio</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Sesión de Chat</h2>
+            <p>Cuando mantienes una conversación por chat desde Higueras con tu amigo en Zarautz, la Capa de Sesión:</p>
+            <ol>
+                <li><strong>Establecimiento:</strong> Se establece una sesión de chat entre tu aplicación y la de tu amigo</li>
+                <li><strong>Autenticación:</strong> Se verifica tu identidad y se crea un token de sesión</li>
+                <li><strong>Control de diálogo:</strong> Se alterna el turno para enviar mensajes (evita colisiones)</li>
+                <li><strong>Sincronización:</strong> Se mantiene sincronizado el estado de la conversación</li>
+                <li><strong>Persistencia:</strong> La sesión se mantiene activa aunque haya pausas en la conversación</li>
+                <li><strong>Recuperación:</strong> Si se pierde la conexión, se puede reanudar la sesión</li>
+                <li><strong>Terminación:</strong> Al cerrar el chat, se termina la sesión de manera ordenada</li>
+            </ol>
+        </section>
+
+        <section id="estados-sesion">
+            <h2>Estados de una Sesión</h2>
+            <p>Una sesión típica pasa por varios estados durante su ciclo de vida:</p>
+            <ol>
+                <li><strong>INACTIVA:</strong> No hay sesión establecida</li>
+                <li><strong>ESTABLECIENDO:</strong> Se está negociando el establecimiento de la sesión</li>
+                <li><strong>ACTIVA:</strong> La sesión está funcionando normalmente</li>
+                <li><strong>SUSPENDIDA:</strong> La sesión está pausada temporalmente</li>
+                <li><strong>RECUPERANDO:</strong> Se está recuperando de una interrupción</li>
+                <li><strong>TERMINANDO:</strong> Se está cerrando la sesión de manera ordenada</li>
+                <li><strong>CERRADA:</strong> La sesión ha terminado completamente</li>
+            </ol>
+        </section>
+
+        <section id="servicios-sesion">
+            <h2>Servicios de la Capa de Sesión</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo de Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Establecimiento de Sesión</td>
+                        <td>Crear una conexión lógica entre aplicaciones</td>
+                        <td>Iniciar sesión en una aplicación web</td>
+                    </tr>
+                    <tr>
+                        <td>Control de Diálogo</td>
+                        <td>Gestionar quién puede enviar datos y cuándo</td>
+                        <td>Chat en tiempo real con turnos</td>
+                    </tr>
+                    <tr>
+                        <td>Sincronización</td>
+                        <td>Mantener datos sincronizados entre aplicaciones</td>
+                        <td>Sincronización de archivos en la nube</td>
+                    </tr>
+                    <tr>
+                        <td>Recuperación</td>
+                        <td>Restaurar el estado de la sesión después de fallos</td>
+                        <td>Reanudar descarga interrumpida</td>
+                    </tr>
+                    <tr>
+                        <td>Terminación</td>
+                        <td>Cerrar la sesión de manera ordenada</td>
+                        <td>Cerrar sesión en una aplicación</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="transporte.html">Anterior: Capa 4 - Transporte</a> | <a href="presentacion.html">Siguiente: Capa 6 - Presentación</a></p>
+    </footer>
+</body>
+</html> 

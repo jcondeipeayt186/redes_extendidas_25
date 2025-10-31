@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Protocolo - Redes de Computadoras</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-hdd-network"></i> Redes de Computadoras
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Capas OSI
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/capa1">Capa 1 - Física</a></li>
+                            <li><a class="dropdown-item" href="/capa2">Capa 2 - Enlace de Datos</a></li>
+                            <li><a class="dropdown-item" href="/capa3">Capa 3 - Red</a></li>
+                            <li><a class="dropdown-item" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa5">Capa 5 - Sesión</a></li>
+                            <li><a class="dropdown-item" href="/capa6">Capa 6 - Presentación</a></li>
+                            <li><a class="dropdown-item" href="/capa7">Capa 7 - Aplicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Editar Protocolo</h1>
+                    <p class="lead">Gestión de Protocolos de Red</p>
+                    <p class="mb-4">
+                        Modifica la información del protocolo seleccionado para mantener 
+                        actualizada nuestra base de datos de protocolos de red.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white bg-opacity-10 p-4 rounded">
+                        <i class="bi bi-pencil-square display-1 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/protocolos">Protocolos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Editar Protocolo</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0"><i class="bi bi-pencil-square"></i> Formulario para Editar Protocolo</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead mb-4">
+                            Modifica la información del protocolo seleccionado:
+                        </p>
+                        
+                        <!-- Formulario para editar protocolo -->
+                        <form method="POST" action="/editar_protocolo/{{ protocolo[0] }}" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label for="nombre" class="form-label">
+                                        <i class="bi bi-file-text"></i> Nombre del Protocolo
+                                    </label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{ protocolo[1] }}" required>
+                                    <div class="form-text">Ejemplo: Transmission Control Protocol</div>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa el nombre del protocolo.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="acronimo" class="form-label">
+                                        <i class="bi bi-tag"></i> Acrónimo
+                                    </label>
+                                    <input type="text" class="form-control" id="acronimo" name="acronimo" value="{{ protocolo[2] }}" required>
+                                    <div class="form-text">Ejemplo: TCP</div>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa el acrónimo del protocolo.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="nombreCapa" class="form-label">
+                                        <i class="bi bi-layers"></i> Capa del Modelo OSI
+                                    </label>
+                                    <select class="form-select" id="nombreCapa" name="nombreCapa" required>
+                                        <option value="Capa 1 - Física" {% if protocolo[3] == "Capa 1 - Física" %}selected{% endif %}>Capa 1 - Física</option>
+                                        <option value="Capa 2 - Enlace de Datos" {% if protocolo[3] == "Capa 2 - Enlace de Datos" %}selected{% endif %}>Capa 2 - Enlace de Datos</option>
+                                        <option value="Capa 3 - Red" {% if protocolo[3] == "Capa 3 - Red" %}selected{% endif %}>Capa 3 - Red</option>
+                                        <option value="Capa 4 - Transporte" {% if protocolo[3] == "Capa 4 - Transporte" %}selected{% endif %}>Capa 4 - Transporte</option>
+                                        <option value="Capa 5 - Sesión" {% if protocolo[3] == "Capa 5 - Sesión" %}selected{% endif %}>Capa 5 - Sesión</option>
+                                        <option value="Capa 6 - Presentación" {% if protocolo[3] == "Capa 6 - Presentación" %}selected{% endif %}>Capa 6 - Presentación</option>
+                                        <option value="Capa 7 - Aplicación" {% if protocolo[3] == "Capa 7 - Aplicación" %}selected{% endif %}>Capa 7 - Aplicación</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor selecciona una capa del modelo OSI.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="descripcion" class="form-label">
+                                        <i class="bi bi-card-text"></i> Descripción
+                                    </label>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="4" required>{{ protocolo[4] }}</textarea>
+                                    <div class="form-text">Describe la función y características del protocolo</div>
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa una descripción del protocolo.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-custom me-3">
+                                        <i class="bi bi-check-circle"></i> Actualizar Protocolo
+                                    </button>
+                                    <a href="/protocolos" class="btn btn-outline-secondary btn-lg btn-custom">
+                                        <i class="bi bi-arrow-left"></i> Cancelar
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información del protocolo actual -->
+        <section class="content-section mt-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-info-circle"></i> Información Actual del Protocolo</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="text-primary">
+                                                <i class="bi bi-hash"></i> ID
+                                            </th>
+                                            <td><span class="badge bg-secondary">{{ protocolo[0] }}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-primary">
+                                                <i class="bi bi-file-text"></i> Nombre
+                                            </th>
+                                            <td>{{ protocolo[1] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-primary">
+                                                <i class="bi bi-tag"></i> Acrónimo
+                                            </th>
+                                            <td><span class="badge bg-primary protocol-acronym">{{ protocolo[2] }}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-primary">
+                                                <i class="bi bi-layers"></i> Capa
+                                            </th>
+                                            <td><span class="badge bg-info">{{ protocolo[3] }}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-primary">
+                                                <i class="bi bi-card-text"></i> Descripción
+                                            </th>
+                                            <td>{{ protocolo[4] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-primary">
+                                                <i class="bi bi-clock"></i> Última Actualización
+                                            </th>
+                                            <td><small class="text-muted">{{ protocolo[5] }}</small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Redes de Computadoras</h5>
+                    <p>Aplicación web educativa desarrollada con Python, Flask y MySQL</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/redes">Redes</a></li>
+                        <li><a href="/protocolos">Protocolos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 - Aplicación Web de Redes de Computadoras</p>
+                    <p class="mb-0">Desarrollado con Python, Flask, Bootstrap y MySQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Validación de formularios Bootstrap
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+        
+        // Activar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Capa 2 - Enlace de Datos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h2 class="mb-0">
+                        <i class="fas fa-link me-2"></i>
+                        Capa 2 - Enlace de Datos
+                    </h2>
+                </div>
+                <div class="card-body text-center py-5">
+                    <i class="fas fa-tools fa-6x text-muted mb-4"></i>
+                    <h3 class="text-muted">Página en Construcción</h3>
+                    <p class="lead text-muted">Esta página estará disponible próximamente con información detallada sobre la Capa de Enlace de Datos del modelo OSI.</p>
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="fas fa-home me-2"></i>
+                        Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

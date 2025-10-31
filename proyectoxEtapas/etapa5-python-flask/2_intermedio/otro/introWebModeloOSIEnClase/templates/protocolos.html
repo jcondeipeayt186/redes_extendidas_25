@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolos de Red - Modelo OSI</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-hdd-network"></i> Redes de Computadoras
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/protocolos">Protocolos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Capas OSI
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/capa1">Capa 1 - Física</a></li>
+                            <li><a class="dropdown-item" href="/capa2">Capa 2 - Enlace de Datos</a></li>
+                            <li><a class="dropdown-item" href="/capa3">Capa 3 - Red</a></li>
+                            <li><a class="dropdown-item" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa5">Capa 5 - Sesión</a></li>
+                            <li><a class="dropdown-item" href="/capa6">Capa 6 - Presentación</a></li>
+                            <li><a class="dropdown-item" href="/capa7">Capa 7 - Aplicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Protocolos de Red</h1>
+                    <p class="lead">Modelo OSI y Protocolos de Comunicación</p>
+                    <p class="mb-4">
+                        Explora los protocolos que hacen posible la comunicación en las redes. 
+                        Desde HTTP hasta TCP/IP, entiende cómo los protocolos organizan y 
+                        facilitan la transmisión de datos.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white bg-opacity-10 p-4 rounded">
+                        <i class="bi bi-list-check display-1 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Protocolos</li>
+            </ol>
+        </nav>
+
+        <!-- Introducción a los protocolos -->
+        <section class="content-section fade-in">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-question-circle"></i> ¿Qué son los Protocolos de Red?</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                Los protocolos de red son reglas y convenciones que permiten la comunicación 
+                                entre dispositivos en una red. Son como "idiomas" que las computadoras usan 
+                                para entenderse entre sí.
+                            </p>
+                            
+                            <p>Un protocolo define:</p>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-file-text"></i> Formato de los datos</h6>
+                                            <small>Cómo se estructuran los mensajes</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-arrow-left-right"></i> Secuencia de comunicación</h6>
+                                            <small>Quién habla primero y cuándo</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-exclamation-triangle"></i> Detección de errores</h6>
+                                            <small>Cómo identificar y corregir problemas</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-compress"></i> Compresión de datos</h6>
+                                            <small>Cómo optimizar la transmisión</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-shield-lock"></i> Seguridad</h6>
+                                            <small>Cómo proteger la información</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modelo OSI y protocolos -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-layers"></i> Protocolos en el Modelo OSI</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="accordion" id="modeloOSI">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#capa7">
+                                            Capa 7 - Aplicación
+                                        </button>
+                                    </h2>
+                                    <div id="capa7" class="accordion-collapse collapse show" data-bs-parent="#modeloOSI">
+                                        <div class="accordion-body">
+                                            <p>Protocolos que interactúan directamente con el usuario:</p>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-globe"></i> HTTP/HTTPS</h6>
+                                                            <small>Navegación web segura</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-file-earmark-arrow-up"></i> FTP</h6>
+                                                            <small>Transferencia de archivos</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-envelope"></i> SMTP/POP3/IMAP</h6>
+                                                            <small>Correo electrónico</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-search"></i> DNS</h6>
+                                                            <small>Resolución de nombres de dominio</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#capa4">
+                                            Capa 4 - Transporte
+                                        </button>
+                                    </h2>
+                                    <div id="capa4" class="accordion-collapse collapse" data-bs-parent="#modeloOSI">
+                                        <div class="accordion-body">
+                                            <p>Protocolos para entrega confiable de datos:</p>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-shield-check"></i> TCP</h6>
+                                                            <small>Transmission Control Protocol - Conexión confiable</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-lightning"></i> UDP</h6>
+                                                            <small>User Datagram Protocol - Transmisión rápida</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#capa3">
+                                            Capa 3 - Red
+                                        </button>
+                                    </h2>
+                                    <div id="capa3" class="accordion-collapse collapse" data-bs-parent="#modeloOSI">
+                                        <div class="accordion-body">
+                                            <p>Protocolos para enrutamiento y direccionamiento:</p>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-router"></i> IP</h6>
+                                                            <small>Internet Protocol - Direccionamiento lógico</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-info-circle"></i> ICMP</h6>
+                                                            <small>Internet Control Message Protocol</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gestión de protocolos -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-gear"></i> Gestión de Protocolos</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                A continuación puedes ver los protocolos almacenados en nuestra base de datos 
+                                y gestionar esta información:
+                            </p>
+                            
+                            <!-- Botón para agregar nuevo protocolo -->
+                            <div class="text-center mb-4">
+                                <a href="/agregar_protocolo" class="btn btn-primary btn-lg btn-custom">
+                                    <i class="bi bi-plus-circle"></i> Agregar Nuevo Protocolo
+                                </a>
+                            </div>
+                            
+                            <!-- Tabla de protocolos -->
+                            <h4 class="mb-3">Protocolos Almacenados</h4>
+                            
+                            {% if protocolos %}
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Acrónimo</th>
+                                                <th>Capa</th>
+                                                <th>Descripción</th>
+                                                <th>Fecha Actualización</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for protocolo in protocolos %}
+                                            <tr>
+                                                <td><span class="badge bg-secondary">{{ protocolo[0] }}</span></td>
+                                                <td>{{ protocolo[1] }}</td>
+                                                <td><span class="badge bg-primary protocol-acronym">{{ protocolo[2] }}</span></td>
+                                                <td><span class="badge bg-info">{{ protocolo[3] }}</span></td>
+                                                <td>{{ protocolo[4] }}</td>
+                                                <td><small class="text-muted">{{ protocolo[5] }}</small></td>
+                                                <td>
+                                                    <div class="btn-group" role="group">
+                                                        <a href="/editar_protocolo/{{ protocolo[0] }}" class="btn btn-sm btn-outline-primary">
+                                                            <i class="bi bi-pencil"></i> Editar
+                                                        </a>
+                                                        <a href="/eliminar_protocolo/{{ protocolo[0] }}" 
+                                                           class="btn btn-sm btn-outline-danger"
+                                                           onclick="return confirm('¿Estás seguro de que quieres eliminar este protocolo?')">
+                                                            <i class="bi bi-trash"></i> Eliminar
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-info text-center">
+                                    <i class="bi bi-info-circle"></i>
+                                    <strong>No hay protocolos almacenados en la base de datos.</strong>
+                                    <br>
+                                    <a href="/agregar_protocolo" class="btn btn-primary mt-2">
+                                        <i class="bi bi-plus-circle"></i> Agregar el primer protocolo
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funcionalidades CRUD -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-tools"></i> Funcionalidades CRUD</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                Esta aplicación permite realizar operaciones CRUD (Create, Read, Update, Delete) 
+                                sobre los protocolos de red:
+                            </p>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-plus-circle display-4 text-success mb-3"></i>
+                                            <h6>Create (Crear)</h6>
+                                            <small>Agregar nuevos protocolos a la base de datos</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-eye display-4 text-primary mb-3"></i>
+                                            <h6>Read (Leer)</h6>
+                                            <small>Visualizar todos los protocolos almacenados</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-pencil display-4 text-warning mb-3"></i>
+                                            <h6>Update (Actualizar)</h6>
+                                            <small>Modificar información de protocolos existentes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-trash display-4 text-danger mb-3"></i>
+                                            <h6>Delete (Eliminar)</h6>
+                                            <small>Remover protocolos de la base de datos</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-warning mt-4">
+                                <i class="bi bi-exclamation-triangle"></i>
+                                <strong>Nota:</strong> Las funcionalidades de edición y eliminación están preparadas en el backend 
+                                pero requieren implementación completa en el frontend.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejemplos de uso -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-lightbulb"></i> Ejemplos de Uso de Protocolos</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-globe"></i> Navegación Web (HTTP/HTTPS)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                Cuando visitas una página web, tu navegador usa HTTP para solicitar la página 
+                                                y el servidor responde con el contenido HTML. HTTPS agrega encriptación para mayor seguridad.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-envelope"></i> Correo Electrónico (SMTP/POP3)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                SMTP se usa para enviar correos, mientras que POP3 o IMAP se usan para recibirlos. 
+                                                Estos protocolos permiten la comunicación entre clientes de correo y servidores.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-file-earmark-arrow-up"></i> Transferencia de Archivos (FTP)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                FTP permite subir y descargar archivos desde servidores remotos. Es especialmente 
+                                                útil para administradores de sistemas y desarrolladores web.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-search"></i> Resolución de Nombres (DNS)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                DNS convierte nombres de dominio como "google.com" en direcciones IP como "142.250.190.78", 
+                                                permitiendo que los usuarios accedan a sitios web usando nombres fáciles de recordar.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Redes de Computadoras</h5>
+                    <p>Aplicación web educativa desarrollada con Python, Flask y MySQL</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/redes">Redes</a></li>
+                        <li><a href="/protocolos">Protocolos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 - Aplicación Web de Redes de Computadoras</p>
+                    <p class="mb-0">Desarrollado con Python, Flask, Bootstrap y MySQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Activar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+</body>
+</html> 

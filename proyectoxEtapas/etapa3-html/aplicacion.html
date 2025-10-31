@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 7 - Aplicación - Modelo OSI</title>
+</head>
+<body>
+    <header>
+        <h1>Capa 7 - Aplicación</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="redes.html">Redes</a></li>
+                <li><a href="fisica.html">Capa 1 - Física</a></li>
+                <li><a href="enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="red.html">Capa 3 - Red</a></li>
+                <li><a href="transporte.html">Capa 4 - Transporte</a></li>
+                <li><a href="sesion.html">Capa 5 - Sesión</a></li>
+                <li><a href="presentacion.html">Capa 6 - Presentación</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>¿Qué hace la Capa de Aplicación?</h2>
+            <p>La Capa de Aplicación es la séptima y última capa del modelo OSI y proporciona servicios de red directamente a las aplicaciones del usuario final. Esta capa define los protocolos y servicios que permiten a las aplicaciones acceder a la red y comunicarse con otras aplicaciones.</p>
+            
+            <p>Sus funciones principales incluyen proporcionar interfaces de usuario, gestionar servicios de red como correo electrónico, transferencia de archivos, navegación web, y definir cómo las aplicaciones solicitan y reciben servicios de red.</p>
+        </section>
+
+        <section id="protocolos">
+            <h2>Protocolos de la Capa de Aplicación</h2>
+            
+            <h3>HTTP/HTTPS (HyperText Transfer Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo fundamental de la World Wide Web que permite la transferencia de páginas web y recursos multimedia.</p>
+            <p><strong>Función:</strong> Define cómo los navegadores solicitan páginas web a los servidores y cómo los servidores responden con el contenido solicitado.</p>
+            
+            <h3>FTP (File Transfer Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo estándar para la transferencia de archivos entre sistemas de computadoras en una red.</p>
+            <p><strong>Función:</strong> Permite subir, descargar, eliminar y gestionar archivos en servidores remotos de manera eficiente.</p>
+            
+            <h3>SMTP (Simple Mail Transfer Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolo estándar para el envío de correos electrónicos entre servidores de correo.</p>
+            <p><strong>Función:</strong> Gestiona el envío de mensajes de correo electrónico desde el cliente hacia el servidor de destino.</p>
+            
+            <h3>POP3/IMAP (Post Office Protocol / Internet Message Access Protocol)</h3>
+            <p><strong>Descripción:</strong> Protocolos para la recepción y gestión de correos electrónicos desde servidores de correo.</p>
+            <p><strong>Función:</strong> POP3 descarga mensajes al cliente local, mientras que IMAP permite gestionar correos directamente en el servidor.</p>
+            
+            <h3>DNS (Domain Name System)</h3>
+            <p><strong>Descripción:</strong> Sistema que traduce nombres de dominio legibles por humanos a direcciones IP numéricas.</p>
+            <p><strong>Función:</strong> Proporciona un directorio distribuido que mapea nombres de dominio a direcciones IP y otros recursos de red.</p>
+            
+            <h3>SSH (Secure Shell)</h3>
+            <p><strong>Descripción:</strong> Protocolo que proporciona acceso seguro a sistemas remotos y transferencia segura de archivos.</p>
+            <p><strong>Función:</strong> Establece conexiones cifradas para acceso remoto, ejecución de comandos y transferencia segura de datos.</p>
+        </section>
+
+        <section id="funcionalidades-prueba">
+            <h2>Funcionalidades de Prueba</h2>
+            <p>Como usuario registrado, puedes realizar las siguientes pruebas relacionadas con la Capa de Aplicación:</p>
+            
+            <h3>1. Navegación Web y HTTP</h3>
+            <p>Esta prueba te permite experimentar con el protocolo HTTP:</p>
+            <ul>
+                <li>Simula solicitudes HTTP GET y POST</li>
+                <li>Analiza encabezados HTTP y códigos de estado</li>
+                <li>Observa el proceso de resolución DNS</li>
+                <li>Experimenta con diferentes tipos de contenido web</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> HTTP/HTTPS, DNS</p>
+            <p><strong>Conceptos de red:</strong> Cliente-servidor, solicitudes HTTP, códigos de estado, encabezados</p>
+            
+            <h3>2. Transferencia de Archivos FTP</h3>
+            <p>Experimenta con la transferencia de archivos:</p>
+            <ul>
+                <li>Simula conexiones FTP activas y pasivas</li>
+                <li>Gestiona archivos en servidores remotos</li>
+                <li>Observa diferentes modos de transferencia</li>
+                <li>Analiza comandos FTP y respuestas del servidor</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> FTP, SFTP</p>
+            <p><strong>Conceptos de red:</strong> Transferencia de archivos, conexiones cliente-servidor, comandos de control</p>
+            
+            <h3>3. Sistema de Correo Electrónico</h3>
+            <p>Aprende sobre el funcionamiento del correo electrónico:</p>
+            <ul>
+                <li>Simula el envío de correos con SMTP</li>
+                <li>Gestiona la recepción de correos con POP3/IMAP</li>
+                <li>Analiza la estructura de mensajes de correo</li>
+                <li>Experimenta con adjuntos y formatos MIME</li>
+            </ul>
+            <p><strong>Protocolos involucrados:</strong> SMTP, POP3, IMAP, MIME</p>
+            <p><strong>Conceptos de red:</strong> Correo electrónico, buzones de entrada, adjuntos, formato de mensajes</p>
+        </section>
+
+        <section id="ejemplo-practico">
+            <h2>Ejemplo Práctico: Envío de un Correo Electrónico</h2>
+            <p>Cuando envías un correo electrónico desde Higueras a tu amigo en Zarautz, la Capa de Aplicación:</p>
+            <ol>
+                <li><strong>Interfaz de usuario:</strong> Tu aplicación de correo te permite escribir el mensaje</li>
+                <li><strong>Resolución DNS:</strong> Se busca la dirección IP del servidor de correo de tu amigo</li>
+                <li><strong>Conexión SMTP:</strong> Se establece una conexión con tu servidor de correo local</li>
+                <li><strong>Autenticación:</strong> Se verifica tu identidad en el servidor</li>
+                <li><strong>Envío del mensaje:</strong> Tu correo se envía al servidor local</li>
+                <li><strong>Transmisión:</strong> El servidor local envía el correo al servidor de destino en España</li>
+                <li><strong>Entrega:</strong> El servidor de destino entrega el correo al buzón de tu amigo</li>
+                <li><strong>Recepción:</strong> Tu amigo puede descargar el correo usando POP3 o IMAP</li>
+            </ol>
+        </section>
+
+        <section id="servicios-web">
+            <h2>Servicios Web Comunes</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Protocolo</th>
+                        <th>Puerto</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Navegación Web</td>
+                        <td>HTTP</td>
+                        <td>80</td>
+                        <td>Acceso a páginas web</td>
+                    </tr>
+                    <tr>
+                        <td>Navegación Web Segura</td>
+                        <td>HTTPS</td>
+                        <td>443</td>
+                        <td>Acceso seguro a páginas web</td>
+                    </tr>
+                    <tr>
+                        <td>Transferencia de Archivos</td>
+                        <td>FTP</td>
+                        <td>21</td>
+                        <td>Subida y descarga de archivos</td>
+                    </tr>
+                    <tr>
+                        <td>Correo Saliente</td>
+                        <td>SMTP</td>
+                        <td>25</td>
+                        <td>Envío de correos electrónicos</td>
+                    </tr>
+                    <tr>
+                        <td>Correo Entrante</td>
+                        <td>POP3</td>
+                        <td>110</td>
+                        <td>Descarga de correos electrónicos</td>
+                    </tr>
+                    <tr>
+                        <td>Acceso a Correo</td>
+                        <td>IMAP</td>
+                        <td>143</td>
+                        <td>Gestión de correos en el servidor</td>
+                    </tr>
+                    <tr>
+                        <td>Resolución de Nombres</td>
+                        <td>DNS</td>
+                        <td>53</td>
+                        <td>Traducción de nombres a IP</td>
+                    </tr>
+                    <tr>
+                        <td>Conexión Remota Segura</td>
+                        <td>SSH</td>
+                        <td>22</td>
+                        <td>Acceso seguro a sistemas remotos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="aplicaciones-tipicas">
+            <h2>Aplicaciones Típicas de Red</h2>
+            <p>Las siguientes aplicaciones utilizan los protocolos de la Capa de Aplicación:</p>
+            <ul>
+                <li><strong>Navegadores web:</strong> Chrome, Firefox, Safari, Edge</li>
+                <li><strong>Clientes de correo:</strong> Outlook, Thunderbird, Gmail</li>
+                <li><strong>Clientes FTP:</strong> FileZilla, WinSCP, Cyberduck</li>
+                <li><strong>Terminales SSH:</strong> PuTTY, Terminal, iTerm2</li>
+                <li><strong>Mensajería instantánea:</strong> WhatsApp Web, Telegram, Discord</li>
+                <li><strong>Videoconferencia:</strong> Zoom, Teams, Skype</li>
+                <li><strong>Streaming:</strong> Netflix, YouTube, Spotify</li>
+                <li><strong>Juegos en línea:</strong> Fortnite, Minecraft, League of Legends</li>
+            </ul>
+        </section>
+
+        <section id="arquitectura-cliente-servidor">
+            <h2>Arquitectura Cliente-Servidor</h2>
+            <p>La mayoría de las aplicaciones de red siguen el modelo cliente-servidor:</p>
+            <ol>
+                <li><strong>Cliente:</strong> La aplicación que solicita servicios (navegador, cliente de correo)</li>
+                <li><strong>Servidor:</strong> La aplicación que proporciona servicios (servidor web, servidor de correo)</li>
+                <li><strong>Comunicación:</strong> Intercambio de mensajes usando protocolos específicos</li>
+                <li><strong>Recursos:</strong> El servidor gestiona y proporciona acceso a recursos compartidos</li>
+                <li><strong>Interfaz:</strong> El cliente proporciona una interfaz de usuario para interactuar con el servicio</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - IPEAyT N°186 "Castagnari" - Proyecto de Redes de Computadoras</p>
+        <p><a href="presentacion.html">Anterior: Capa 6 - Presentación</a> | <a href="usuarios.html">Siguiente: Registro de Usuarios</a></p>
+    </footer>
+</body>
+</html> 

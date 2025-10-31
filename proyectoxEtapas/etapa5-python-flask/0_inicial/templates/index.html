@@ -1,0 +1,18 @@
+{#
+  {% extends "base.html" %}
+  Herencia de plantillas Jinja2: esta plantilla usa como base a base.html
+  y solo define los bloques necesarios.
+#}
+{% extends "base.html" %}
+
+{# Sobrescribimos el bloque "title" definido en base.html #}
+{% block title %}Inicio{% endblock %}
+
+{# Contenido principal dentro del bloque "content" #}
+{% block content %}
+<h2>Inicio</h2>
+<p>Bienvenido a la aplicación inicial de Flask.</p>
+<p>Usa el menú para navegar a la sección de protocolos.</p>
+{% endblock %}
+
+

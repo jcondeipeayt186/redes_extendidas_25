@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa 4 - Transporte - Modelo OSI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-hdd-network"></i> Redes de Computadoras
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Capas OSI
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/capa1">Capa 1 - Física</a></li>
+                            <li><a class="dropdown-item" href="/capa2">Capa 2 - Enlace de Datos</a></li>
+                            <li><a class="dropdown-item" href="/capa3">Capa 3 - Red</a></li>
+                            <li><a class="dropdown-item active" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa5">Capa 5 - Sesión</a></li>
+                            <li><a class="dropdown-item" href="/capa6">Capa 6 - Presentación</a></li>
+                            <li><a class="dropdown-item" href="/capa7">Capa 7 - Aplicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Capa 4 - Transporte</h1>
+                    <p class="lead">Control de Flujo y Confiabilidad</p>
+                    <p class="mb-4">
+                        La capa de transporte se encarga de la entrega confiable de datos entre aplicaciones 
+                        y proporciona control de flujo y corrección de errores.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white bg-opacity-10 p-4 rounded">
+                        <i class="bi bi-router display-1 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/protocolos">Protocolos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Capa 4 - Transporte</li>
+            </ol>
+        </nav>
+
+        <section class="content-section fade-in">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-question-circle"></i> ¿Qué es la Capa de Transporte?</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                La Capa 4 del modelo OSI se encarga de la entrega confiable de datos 
+                                entre aplicaciones y proporciona control de flujo y corrección de errores.
+                            </p>
+                            
+                            <div class="alert alert-info">
+                                <i class="bi bi-info-circle"></i>
+                                <strong>Función Principal:</strong> Garantizar la entrega confiable y ordenada 
+                                de datos entre aplicaciones de origen y destino.
+                            </div>
+                            
+                            <h4 class="text-primary mt-4 mb-3">Responsabilidades de la Capa de Transporte</h4>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-check-circle"></i> Entrega confiable</h6>
+                                            <small>Garantizar la entrega sin errores</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-arrow-left-right"></i> Control de flujo</h6>
+                                            <small>Regular la velocidad de transmisión</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-box"></i> Segmentación</h6>
+                                            <small>Dividir datos en segmentos manejables</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-exclamation-triangle"></i> Corrección de errores</h6>
+                                            <small>Detectar y corregir errores de transmisión</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-hash"></i> Direccionamiento de puertos</h6>
+                                            <small>Identificar aplicaciones específicas</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-arrow-clockwise"></i> Reensamblaje</h6>
+                                            <small>Reconstruir datos en el orden correcto</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-list-check"></i> Protocolos de la Capa 4</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-shield-check"></i> TCP (Transmission Control Protocol)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Protocolo orientado a conexión:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Entrega confiable y ordenada</li>
+                                                <li class="list-group-item">Control de flujo y congestión</li>
+                                                <li class="list-group-item">Corrección de errores</li>
+                                                <li class="list-group-item">Puertos de origen y destino</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-lightning"></i> UDP (User Datagram Protocol)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Protocolo no orientado a conexión:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Transmisión rápida sin garantías</li>
+                                                <li class="list-group-item">Sin control de flujo</li>
+                                                <li class="list-group-item">Sin corrección de errores</li>
+                                                <li class="list-group-item">Ideal para aplicaciones en tiempo real</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-arrow-left-right"></i> ARP</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Address Resolution Protocol:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Mapeo IP a MAC</li>
+                                                <li class="list-group-item">Tabla ARP</li>
+                                                <li class="list-group-item">Broadcast para resolución</li>
+                                                <li class="list-group-item">Cache local</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0"><i class="bi bi-diagram-3"></i> Protocolos de Enrutamiento</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Protocolos para intercambiar información de rutas:</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">RIP (Routing Information Protocol)</li>
+                                                <li class="list-group-item">OSPF (Open Shortest Path First)</li>
+                                                <li class="list-group-item">BGP (Border Gateway Protocol)</li>
+                                                <li class="list-group-item">EIGRP (Enhanced Interior Gateway Routing)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-arrow-left-right"></i> Navegación entre Capas</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <a href="/capa3" class="btn btn-outline-primary btn-lg w-100">
+                                        <i class="bi bi-arrow-down"></i> Capa 3 - Red
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="/capa5" class="btn btn-primary btn-lg w-100">
+                                        <i class="bi bi-arrow-up"></i> Capa 5 - Sesión
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="/protocolos" class="btn btn-outline-secondary btn-lg w-100">
+                                        <i class="bi bi-list-check"></i> Ver Todas las Capas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Redes de Computadoras</h5>
+                    <p>Aplicación web educativa desarrollada con Python, Flask y MySQL</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/redes">Redes</a></li>
+                        <li><a href="/protocolos">Protocolos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 - Aplicación Web de Redes de Computadoras</p>
+                    <p class="mb-0">Desarrollado con Python, Flask, Bootstrap y MySQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+</body>
+</html> 

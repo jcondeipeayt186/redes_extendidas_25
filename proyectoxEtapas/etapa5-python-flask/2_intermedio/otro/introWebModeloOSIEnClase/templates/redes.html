@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes de Computadoras - Conceptos y Fundamentos</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-hdd-network"></i> Redes de Computadoras
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/redes">Redes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/protocolos">Protocolos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Capas OSI
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/capa1">Capa 1 - Física</a></li>
+                            <li><a class="dropdown-item" href="/capa2">Capa 2 - Enlace de Datos</a></li>
+                            <li><a class="dropdown-item" href="/capa3">Capa 3 - Red</a></li>
+                            <li><a class="dropdown-item" href="/capa4">Capa 4 - Transporte</a></li>
+                            <li><a class="dropdown-item" href="/capa5">Capa 5 - Sesión</a></li>
+                            <li><a class="dropdown-item" href="/capa6">Capa 6 - Presentación</a></li>
+                            <li><a class="dropdown-item" href="/capa7">Capa 7 - Aplicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Redes de Computadoras</h1>
+                    <p class="lead">Conceptos, Dispositivos y Modelos</p>
+                    <p class="mb-4">
+                        Descubre el fascinante mundo de las redes de computadoras y cómo funcionan 
+                        las comunicaciones digitales en la era moderna.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white bg-opacity-10 p-4 rounded">
+                        <i class="bi bi-hdd-network display-1 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Redes</li>
+            </ol>
+        </nav>
+
+        <!-- Introducción a las redes -->
+        <section class="content-section fade-in">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-question-circle"></i> ¿Qué son las Redes de Computadoras?</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                Una red de computadoras es un conjunto de dispositivos informáticos interconectados 
+                                que comparten recursos e información. Imagina el increíble viaje que hace un mensaje 
+                                desde una computadora en Las Higueras, Córdoba, Argentina, hasta un celular en Génova, Italia.
+                            </p>
+                            
+                            <h4 class="text-primary mt-4 mb-3">El Viaje de un Mensaje</h4>
+                            <p>
+                                Cuando envías un mensaje desde Las Higueras a Génova, este viaja a través de:
+                            </p>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-house"></i> Red Local (LAN)</h6>
+                                            <small>Tu computadora se conecta a un router/módem</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-wifi"></i> Proveedor de Internet</h6>
+                                            <small>El mensaje sale por cables de fibra óptica</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-building"></i> Backbone Nacional</h6>
+                                            <small>Viaja por la infraestructura de Argentina</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-water"></i> Cables Submarinos</h6>
+                                            <small>Cruza el océano Atlántico por cables submarinos</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-globe"></i> Red Europea</h6>
+                                            <small>Entra a Europa por España o Portugal</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-flag"></i> Red Italiana</h6>
+                                            <small>Viaja por la infraestructura italiana</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h6 class="mb-1"><i class="bi bi-phone"></i> Red Local Destino</h6>
+                                            <small>Llega al celular en Génova</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-4">
+                                <i class="bi bi-info-circle"></i>
+                                <strong>¡Increíble!</strong> Todo este proceso ocurre en milisegundos, gracias a protocolos 
+                                y tecnologías que garantizan la entrega confiable de la información.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dispositivos de red -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-router"></i> Dispositivos de Red</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                Los dispositivos de red son los componentes físicos que permiten la comunicación 
+                                entre computadoras y otros dispositivos.
+                            </p>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h5 class="mb-0"><i class="bi bi-hdd-network"></i> Dispositivos de Interconexión</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Router:</strong> Conecta diferentes redes y dirige el tráfico
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Switch:</strong> Conecta dispositivos en una red local
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Hub:</strong> Dispositivo básico que repite señales (obsoleto)
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Bridge:</strong> Conecta segmentos de red
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Gateway:</strong> Conecta redes con diferentes protocolos
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h5 class="mb-0"><i class="bi bi-device-hdd"></i> Dispositivos Finales</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Computadoras:</strong> PCs, laptops, servidores
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Dispositivos Móviles:</strong> Smartphones, tablets
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Impresoras de Red:</strong> Compartidas en la red
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>IoT:</strong> Sensores, cámaras, dispositivos inteligentes
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0"><i class="bi bi-cable"></i> Medios de Transmisión</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <i class="bi bi-cable display-4 text-primary"></i>
+                                                <h6>Cable UTP</h6>
+                                                <small>Cable de par trenzado (Ethernet)</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <i class="bi bi-lightning display-4 text-warning"></i>
+                                                <h6>Fibra Óptica</h6>
+                                                <small>Transmisión por luz (alta velocidad)</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <i class="bi bi-wifi display-4 text-info"></i>
+                                                <h6>WiFi</h6>
+                                                <small>Comunicación inalámbrica</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <i class="bi bi-satellite display-4 text-success"></i>
+                                                <h6>Satélites</h6>
+                                                <small>Comunicación por satélite</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topologías de red -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-diagram-3"></i> Topologías de Red</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                La topología de red define la forma física o lógica en que están conectados 
+                                los dispositivos de una red.
+                            </p>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Topologías Físicas</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Bus:</strong> Todos los dispositivos conectados a un cable común
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Estrella:</strong> Todos conectados a un dispositivo central (switch)
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Anillo:</strong> Dispositivos conectados en forma circular
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Malla:</strong> Cada dispositivo conectado a todos los demás
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Árbol:</strong> Jerarquía de dispositivos (como ramas de un árbol)
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Híbrida:</strong> Combinación de diferentes topologías
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Topologías Lógicas</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Broadcast:</strong> Un dispositivo envía a todos los demás
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Point-to-Point:</strong> Comunicación directa entre dos dispositivos
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Multicast:</strong> Envío a un grupo específico de dispositivos
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipos de redes -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-globe"></i> Tipos de Redes</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="accordion" id="tiposRedes">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#alcanceGeografico">
+                                            Por Alcance Geográfico
+                                        </button>
+                                    </h2>
+                                    <div id="alcanceGeografico" class="accordion-collapse collapse show" data-bs-parent="#tiposRedes">
+                                        <div class="accordion-body">
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-person"></i> PAN (Personal Area Network)</h6>
+                                                            <small>Red personal (Bluetooth, USB)</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-house"></i> LAN (Local Area Network)</h6>
+                                                            <small>Red local (casa, oficina, escuela)</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-building"></i> MAN (Metropolitan Area Network)</h6>
+                                                            <small>Red metropolitana (ciudad)</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6><i class="bi bi-globe"></i> WAN (Wide Area Network)</h6>
+                                                            <small>Red de área amplia (países, continentes)</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#propiedad">
+                                            Por Propiedad
+                                        </button>
+                                    </h2>
+                                    <div id="propiedad" class="accordion-collapse collapse" data-bs-parent="#tiposRedes">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Redes Privadas:</strong> De uso exclusivo de una organización
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Redes Públicas:</strong> Accesibles para cualquier usuario
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Redes Híbridas:</strong> Combinación de privadas y públicas
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#arquitectura">
+                                            Por Arquitectura
+                                        </button>
+                                    </h2>
+                                    <div id="arquitectura" class="accordion-collapse collapse" data-bs-parent="#tiposRedes">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Cliente-Servidor:</strong> Servidores centralizados que atienden clientes
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>P2P (Peer-to-Peer):</strong> Todos los dispositivos son iguales
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Cloud Computing:</strong> Recursos distribuidos en la nube
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modelos de referencia -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-layers"></i> Modelos de Referencia</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Modelo TCP/IP</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                El modelo TCP/IP es el estándar actual de Internet, desarrollado por DARPA en los años 70.
+                                            </p>
+                                            <ol class="list-group list-group-numbered">
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Aplicación:</strong> HTTP, FTP, SMTP, DNS, SSH
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Transporte:</strong> TCP (confiable), UDP (rápido)
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Internet:</strong> IP, ICMP, ARP
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Acceso a Red:</strong> Ethernet, WiFi, PPP
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Modelo OSI</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                El modelo OSI es un estándar conceptual desarrollado por ISO en 1984.
+                                            </p>
+                                            <ol class="list-group list-group-numbered">
+                                                <li class="list-group-item">
+                                                    <strong>Capa Física:</strong> Transmisión de bits por el medio
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Enlace de Datos:</strong> Control de errores y acceso al medio
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Red:</strong> Enrutamiento y direccionamiento lógico
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Transporte:</strong> Control de flujo y confiabilidad
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Sesión:</strong> Gestión de sesiones entre aplicaciones
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Presentación:</strong> Formato y encriptación de datos
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Capa de Aplicación:</strong> Interfaz con el usuario
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historia de las redes -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-clock-history"></i> Historia de las Redes de Computadoras</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline">
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="mb-0">Década de 1960</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-unstyled">
+                                                    <li><strong>1969:</strong> ARPANET - Primera red de conmutación de paquetes</li>
+                                                    <li><strong>1960s:</strong> Desarrollo de conceptos de conmutación de paquetes</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="mb-0">Década de 1970</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-unstyled">
+                                                    <li><strong>1973:</strong> Desarrollo del protocolo TCP/IP</li>
+                                                    <li><strong>1974:</strong> Primera especificación de Ethernet</li>
+                                                    <li><strong>1977:</strong> Primera demostración de ARPANET</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="mb-0">Década de 1980</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-unstyled">
+                                                    <li><strong>1983:</strong> ARPANET adopta TCP/IP</li>
+                                                    <li><strong>1984:</strong> Introducción del modelo OSI</li>
+                                                    <li><strong>1985:</strong> NSFNET conecta universidades estadounidenses</li>
+                                                    <li><strong>1989:</strong> Nacimiento de la World Wide Web</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="mb-0">Década de 1990</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-unstyled">
+                                                    <li><strong>1991:</strong> ARPANET se convierte en Internet</li>
+                                                    <li><strong>1993:</strong> Navegador Mosaic</li>
+                                                    <li><strong>1995:</strong> Comercialización de Internet</li>
+                                                    <li><strong>1998:</strong> Google es fundado</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impacto actual -->
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"><i class="bi bi-graph-up"></i> Impacto Actual de las Redes</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                Las redes de computadoras han transformado completamente la sociedad moderna:
+                            </p>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-chat-dots display-4 text-primary mb-3"></i>
+                                            <h6>Comunicación Global</h6>
+                                            <small>Mensajería instantánea, videollamadas</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-cart display-4 text-success mb-3"></i>
+                                            <h6>Comercio Electrónico</h6>
+                                            <small>Compras online, banca digital</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-book display-4 text-info mb-3"></i>
+                                            <h6>Educación</h6>
+                                            <small>E-learning, MOOCs, recursos educativos</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-laptop display-4 text-warning mb-3"></i>
+                                            <h6>Trabajo Remoto</h6>
+                                            <small>Teletrabajo, colaboración virtual</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-controller display-4 text-danger mb-3"></i>
+                                            <h6>Entretenimiento</h6>
+                                            <small>Streaming, redes sociales, gaming</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 text-center">
+                                        <div class="card-body">
+                                            <i class="bi bi-heart-pulse display-4 text-success mb-3"></i>
+                                            <h6>Salud</h6>
+                                            <small>Telemedicina, monitoreo remoto</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Redes de Computadoras</h5>
+                    <p>Aplicación web educativa desarrollada con Python, Flask y MySQL</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/redes">Redes</a></li>
+                        <li><a href="/protocolos">Protocolos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 - Aplicación Web de Redes de Computadoras</p>
+                    <p class="mb-0">Desarrollado con Python, Flask, Bootstrap y MySQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Scripts personalizados -->
+    <script>
+        // Activar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+</body>
+</html> 
