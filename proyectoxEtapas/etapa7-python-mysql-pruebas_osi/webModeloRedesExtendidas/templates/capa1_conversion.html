@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Conversión de Texto, Binario y Hexadecimal</h2>
+    <p>Convierte una frase a binario y hexadecimal, o convierte una cadena binaria a texto y decimal (ASCII).</p>
+    <form method="post">
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo de conversión:</label>
+            <select class="form-select" id="tipo" name="tipo" onchange="this.form.submit()">
+                <option value="texto_a_binario" {% if tipo == 'texto_a_binario' %}selected{% endif %}>Texto a Binario y Hexadecimal</option>
+                <option value="binario_a_texto" {% if tipo == 'binario_a_texto' %}selected{% endif %}>Binario a Texto y Decimal</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            {% if tipo == 'texto_a_binario' %}
+                <label for="entrada" class="form-label">Frase a convertir:</label>
+                <input type="text" class="form-control" id="entrada" name="entrada" value="{{ entrada }}" required>
+            {% else %}
+                <label for="entrada" class="form-label">Cadena binaria (separar bytes con espacio):</label>
+                <input type="text" class="form-control" id="entrada" name="entrada" value="{{ entrada }}" required>
+                <div class="form-text">Ejemplo: 01001000 01101111 01101100 01100001</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Convertir</button>
+    </form>
+    {% if resultado %}
+        {% if resultado.error %}
+            <div class="alert alert-danger mt-3">{{ resultado.error }}</div>
+        {% else %}
+            <div class="mt-4">
+                <h5>Resultado:</h5>
+                <ul>
+                    {% if resultado.texto %}<li><strong>Texto:</strong> {{ resultado.texto }}</li>{% endif %}
+                    {% if resultado.binario %}<li><strong>Binario:</strong> {{ resultado.binario }}</li>{% endif %}
+                    {% if resultado.hexadecimal %}<li><strong>Hexadecimal:</strong> {{ resultado.hexadecimal }}</li>{% endif %}
+                    {% if resultado.decimal %}<li><strong>Decimal:</strong> {{ resultado.decimal }}</li>{% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %} 

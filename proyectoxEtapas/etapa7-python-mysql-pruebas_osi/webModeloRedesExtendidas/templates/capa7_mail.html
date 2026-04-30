@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Prueba de Envío de Mail SMTP (Gmail)</h2>
+    <p>Completa los datos para enviar un correo usando SMTP y una cuenta de Google (debe tener habilitado el acceso con token de aplicación).</p>
+    <form method="post">
+        <div class="mb-3">
+            <label for="remitente" class="form-label">Correo remitente (Gmail):</label>
+            <input type="email" class="form-control" id="remitente" name="remitente" required>
+        </div>
+        <div class="mb-3">
+            <label for="destinatario" class="form-label">Correo destinatario:</label>
+            <input type="email" class="form-control" id="destinatario" name="destinatario" required>
+        </div>
+        <div class="mb-3">
+            <label for="token" class="form-label">Token de aplicación de Google:</label>
+            <input type="password" class="form-control" id="token" name="token" required>
+        </div>
+        <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto:</label>
+            <input type="text" class="form-control" id="asunto" name="asunto" required>
+        </div>
+        <div class="mb-3">
+            <label for="cuerpo" class="form-label">Mensaje:</label>
+            <textarea class="form-control" id="cuerpo" name="cuerpo" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Correo</button>
+    </form>
+    {% if resultado %}
+    <div class="alert alert-info mt-3">{{ resultado }}</div>
+    {% endif %}
+</div>
+{% endblock %} 

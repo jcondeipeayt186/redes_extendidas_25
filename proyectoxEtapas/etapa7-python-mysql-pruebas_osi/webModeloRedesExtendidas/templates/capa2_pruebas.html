@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Pruebas interactivas - Capa 2: Enlace de Datos</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label for="prueba" class="form-label">Selecciona la prueba:</label>
+            <select class="form-select" id="prueba" name="prueba" required>
+                <option value="mac">Obtener dirección MAC local</option>
+                <option value="interfaces">Mostrar interfaces de red (Linux/macOS)</option>
+                <option value="scapy">Captura de paquetes con Scapy (requiere permisos de root)</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Ejecutar prueba</button>
+    </form>
+    {% if resultado %}
+        <div class="alert alert-info mt-4" style="white-space: pre-wrap;">
+            <strong>Resultado:</strong><br>
+            {{ resultado }}
+        </div>
+    {% endif %}
+    <a href="{{ url_for('capa2') }}" class="btn btn-secondary mt-3">Volver a la Capa 2</a>
+</div>
+{% endblock %} 

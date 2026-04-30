@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Prueba de Subida de Archivo por FTP</h2>
+    <p>Completa los datos para subir un archivo a un servidor FTP. El archivo se guardará temporalmente en el servidor web antes de enviarse por FTP.</p>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="host" class="form-label">Host FTP:</label>
+            <input type="text" class="form-control" id="host" name="host" required>
+        </div>
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario FTP:</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña FTP:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="archivo" class="form-label">Archivo a subir:</label>
+            <input type="file" class="form-control" id="archivo" name="archivo" required>
+        </div>
+        <div class="mb-3">
+            <label for="archivo_remoto" class="form-label">Nombre del archivo en el servidor FTP (opcional):</label>
+            <input type="text" class="form-control" id="archivo_remoto" name="archivo_remoto">
+        </div>
+        <button type="submit" class="btn btn-primary">Subir Archivo</button>
+    </form>
+    {% if resultado %}
+    <div class="alert alert-info mt-3">{{ resultado }}</div>
+    {% endif %}
+</div>
+{% endblock %} 
